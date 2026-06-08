@@ -502,7 +502,7 @@ body{{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backg
 <p><span id="ftd"></span></p>
 </div>
 
-<script src="scripts/news-sort.js"></script>
+<script src="/hermes-agent-news/scripts/news-sort.js"></script>
 <script>
 function s(k){{window._newsSort(k)}}
 function to(){{window._newsToggle()}}
@@ -549,10 +549,21 @@ if __name__ == '__main__':
     articles = list(merged.values())
     print(f'Total after merge: {len(articles)} articles')
     
-    # Fetch metadata for fresh articles (cached ones already have it)
-    if fresh_articles:
-        print('Fetching fresh metadata from m.toutiao.com...')
-        articles = fetch_metadata(articles) if 'fetch_metadata' in dir() else articles
+    # Fetch metadata only for articles that lack it
+    need_meta = [a for a in articles if not a.get('pub') or not a.get('reads')]
+    if need_meta:
+        print(f'Fetching metadata for {len(need_meta)} articles...')
+        fetched = fetch_metadata(need_meta)
+        # Merge fetched data back
+        for fa in fetched:
+            aid = fa.get('aid')
+            if aid:
+                for i, a in enumerate(articles):
+                    if a.get('aid') == aid:
+                        articles[i] = fa
+                        break
+    else:
+        print('All articles have metadata, skipping fetch')
     
     # Fetch GitHub
     print('Fetching GitHub data...')
