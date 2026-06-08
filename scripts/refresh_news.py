@@ -181,6 +181,55 @@ def scrape_wechat(keyword='Hermes Agent'):
     
     return list(articles.values())
 
+# ===== STEP 2c: Scrape Hacker News =====
+def scrape_hn(keyword='Hermes Agent'):
+    """Scrape Hacker News via Algolia API."""
+    encoded = urllib.parse.quote(keyword)
+    url = f'https://hn.algolia.com/api/v1/search?query={encoded}&tags=story&hitsPerPage=10'
+    articles = {}
+    try:
+        result = subprocess.run(['curl', '-s', '-m', '10', url], capture_output=True, text=True, timeout=15)
+        data = json.loads(result.stdout)
+        for hit in data.get('hits', []):
+            title = hit.get('title', '')
+            if not title or len(title) < 8: continue
+            key = title[:40]
+            if key in articles: continue
+            points = hit.get('points', 0)
+            comments = hit.get('num_comments', 0)
+            url_link = hit.get('url', hit.get('story_url', f'https://news.ycombinator.com/item?id={hit.get("objectID","")}'))
+            articles[key] = {
+                'title': title[:150], 'url': url_link, 'source': 'Hacker News',
+                'aid': f'hn_{hash(key) % 10**12}', 'time': '', 'pub': '',
+                'reads': str(points), 'likes': points, 'comments': comments,
+            }
+    except: pass
+    return list(articles.values())
+
+# ===== STEP 2d: Scrape GitHub Issues =====
+def scrape_github_issues():
+    """Fetch hot GitHub issues from hermes-agent repo."""
+    url = 'https://api.github.com/repos/NousResearch/hermes-agent/issues?state=open&sort=comments&direction=desc&per_page=10'
+    articles = {}
+    try:
+        result = subprocess.run(['curl', '-s', '-m', '10', url,
+            '-H', 'User-Agent: HermesNewsBot'], capture_output=True, text=True, timeout=15)
+        issues = json.loads(result.stdout)
+        if isinstance(issues, list):
+            for issue in issues:
+                title = issue.get('title', '')
+                if not title: continue
+                num = issue.get('number', 0)
+                comments = issue.get('comments', 0)
+                url_link = issue.get('html_url', '')
+                articles[title[:40]] = {
+                    'title': f'#{num} {title[:130]}', 'url': url_link, 'source': 'GitHub Issues',
+                    'aid': f'gh_{num}', 'time': '', 'pub': '',
+                    'reads': str(comments), 'likes': 0, 'comments': comments,
+                }
+    except: pass
+    return list(articles.values())
+
 # ===== STEP 3: Fetch metadata from m.toutiao.com =====
 def fetch_metadata(articles):
     """Fetch read count, likes, comments, publish time for each article."""
@@ -229,7 +278,7 @@ def fetch_metadata(articles):
     return results
 
 # ===== STEP 4: Generate HTML =====
-def gen_html(articles, github, wechat_articles=None, run_info=None):
+def gen_html(articles, github, wechat_articles=None, hn_articles=None, gh_articles=None, run_info=None):
     meta_lookup = {}
     for a in articles:
         aid = a.get('id') or a.get('aid', '')
@@ -330,6 +379,22 @@ def gen_html(articles, github, wechat_articles=None, run_info=None):
             wx_items.append((a['title'][:60], a['url'], a['source']))
         if wx_items:
             all_cats.append(('微信公众号', wx_items))
+    
+    # Add Hacker News category
+    if hn_articles:
+        hn_items = []
+        for a in hn_articles:
+            hn_items.append((a['title'][:60], a['url'], a['source']))
+        if hn_items:
+            all_cats.append(('Hacker News', hn_items))
+    
+    # Add GitHub Issues category
+    if gh_articles:
+        gh_items = []
+        for a in gh_articles:
+            gh_items.append((a['title'][:60], a['url'], a['source']))
+        if gh_items:
+            all_cats.append(('GitHub Issues', gh_items))
     
     cards_html = ''
     cat_count = {}
@@ -526,6 +591,8 @@ body{{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backg
 .tag-对比评测{{background:#fbe9e7;color:#bf360c}}
 .tag-行业动态{{background:#fff3e0;color:#e65100}}
 .tag-微信公众号{{background:#07c160;color:#fff}}
+.tag-Hacker News{{background:#ff6600;color:#fff}}
+.tag-GitHub Issues{{background:#24292f;color:#fff}}
 .card .title{{display:block;font-size:15px;font-weight:600;line-height:1.5;color:#1a1a2e;text-decoration:none}}
 .card .title:hover{{color:#e94560;text-decoration:underline}}
 .card .meta{{font-size:12px;color:#999;margin-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}}
@@ -615,6 +682,16 @@ if __name__ == '__main__':
     wechat_articles = scrape_wechat('Hermes')
     print(f'  {len(wechat_articles)} wechat articles found')
     
+    # Scrape Hacker News
+    print('Scraping Hacker News...')
+    hn_articles = scrape_hn()
+    print(f'  {len(hn_articles)} HN articles found')
+    
+    # Scrape GitHub Issues
+    print('Scraping GitHub Issues...')
+    gh_articles = scrape_github_issues()
+    print(f'  {len(gh_articles)} GitHub issues found')
+    
     # Merge: fresh takes priority, cached fills the gaps
     merged = {}
     # First add fresh articles (they're current)
@@ -632,6 +709,16 @@ if __name__ == '__main__':
     
     # Add wechat articles (don't overwrite toutiao)
     for a in wechat_articles:
+        if a['aid'] not in merged:
+            merged[a['aid']] = a
+    
+    # Add HN articles
+    for a in hn_articles:
+        if a['aid'] not in merged:
+            merged[a['aid']] = a
+    
+    # Add GitHub Issues
+    for a in gh_articles:
         if a['aid'] not in merged:
             merged[a['aid']] = a
     
@@ -671,7 +758,7 @@ if __name__ == '__main__':
         'total': len(articles),
         'cached': len(cached_articles),
     }
-    size = gen_html(articles, github, wechat_articles, run_info)
+    size = gen_html(articles, github, wechat_articles, hn_articles, gh_articles, run_info)
     print(f'  Written {size} bytes to {OUTPUT}')
     
     # Save updated cache
