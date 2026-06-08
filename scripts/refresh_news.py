@@ -137,6 +137,18 @@ def scrape_wechat(keyword='Hermes Agent'):
             title = re.sub(r'<!--red_beg-->|<!--red_end-->', '', title)
             if not title or len(title) < 8: continue
             
+            # Filter out luxury/hermes-brand content, keep AI/Agent related
+            lower = title.lower()
+            keep_keywords = ['agent', 'ai', '智能', '开源', '部署', '安装', '教程', '评测', '版本',
+                           '更新', '桌面', '模型', '代码', '编程', '技术', '工具', '开发',
+                           '架构', '学习', 'vs', '对比', '实测', '指南', '入门']
+            skip_keywords = ['爱马仕', '包包', '奢侈品', '丝巾', '皮带', '手袋', '配货',
+                           'hermès', 'birkin', 'kelly', '口红', '香水', '成衣', '珠宝']
+            if any(k in lower for k in skip_keywords):
+                continue
+            if not any(k in lower for k in keep_keywords):
+                continue
+            
             # Use title as dedup key (微信 articles don't have stable IDs)
             key = title[:40]
             if key in seen: continue
@@ -147,7 +159,7 @@ def scrape_wechat(keyword='Hermes Agent'):
             link = 'https://weixin.sogou.com' + link_m.group(1) if link_m else ''
             
             # Source (public account name)
-            src_m = re.search(r'<a[^>]*class="account"[^>]*>([^<]+)', block)
+            src_m = re.search(r'class="all-time-y2"[^>]*>([^<]+)', block)
             source = html_mod.unescape(src_m.group(1)).strip() if src_m else '微信公众号'
             
             # Description
@@ -600,7 +612,7 @@ if __name__ == '__main__':
     
     # Scrape WeChat public account articles
     print('Scraping WeChat public accounts...')
-    wechat_articles = scrape_wechat()
+    wechat_articles = scrape_wechat('Hermes')
     print(f'  {len(wechat_articles)} wechat articles found')
     
     # Merge: fresh takes priority, cached fills the gaps
