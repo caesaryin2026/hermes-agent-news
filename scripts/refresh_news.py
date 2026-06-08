@@ -111,6 +111,64 @@ def scrape_toutiao(keyword='Hermes Agent'):
     
     return list(all_articles.values())
 
+# ===== STEP 2b: Scrape WeChat (via Sogou) =====
+def scrape_wechat(keyword='Hermes Agent'):
+    """Scrape sogou weixin search for public account articles."""
+    encoded = urllib.parse.quote(keyword)
+    url = f'https://weixin.sogou.com/weixin?type=2&query={encoded}&ie=utf8'
+    articles = {}; seen = set()
+    
+    for page in range(3):  # 3 pages max
+        page_url = url + (f'&page={page}' if page > 0 else '')
+        try:
+            result = subprocess.run(['curl', '-s', '-L', '-m', '15', page_url,
+                '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'],
+                capture_output=True, text=True, timeout=20)
+            html = result.stdout
+        except:
+            continue
+        
+        blocks = re.split(r'<div class="txt-box[^"]*"', html)
+        for block in blocks[1:]:
+            title_m = re.search(r'<a[^>]*target="_blank"[^>]*>(.*?)</a>', block)
+            if not title_m: continue
+            title = html_mod.unescape(re.sub(r'<[^>]+>', '', title_m.group(1))).strip()
+            title = re.sub(r'\s+', ' ', title).strip()
+            title = re.sub(r'<!--red_beg-->|<!--red_end-->', '', title)
+            if not title or len(title) < 8: continue
+            
+            # Use title as dedup key (微信 articles don't have stable IDs)
+            key = title[:40]
+            if key in seen: continue
+            seen.add(key)
+            
+            # Link - Sogog redirect link
+            link_m = re.search(r'href="(/link\?url=[^"]+)"', block)
+            link = 'https://weixin.sogou.com' + link_m.group(1) if link_m else ''
+            
+            # Source (public account name)
+            src_m = re.search(r'<a[^>]*class="account"[^>]*>([^<]+)', block)
+            source = html_mod.unescape(src_m.group(1)).strip() if src_m else '微信公众号'
+            
+            # Description
+            desc_m = re.search(r'class="txt-info[^"]*"[^>]*>([^<]+)', block)
+            desc = html_mod.unescape(re.sub(r'<[^>]+>', '', desc_m.group(1))).strip() if desc_m else ''
+            
+            articles[key] = {
+                'title': title[:150],
+                'url': link,
+                'source': source,
+                'desc': desc,
+                'aid': f'wx_{hash(key) % 10**12}',
+                'time': '',
+                'pub': '',
+                'reads': '0', 'likes': 0, 'comments': 0,
+            }
+        
+        time.sleep(0.5)
+    
+    return list(articles.values())
+
 # ===== STEP 3: Fetch metadata from m.toutiao.com =====
 def fetch_metadata(articles):
     """Fetch read count, likes, comments, publish time for each article."""
@@ -159,7 +217,7 @@ def fetch_metadata(articles):
     return results
 
 # ===== STEP 4: Generate HTML =====
-def gen_html(articles, github, run_info=None):
+def gen_html(articles, github, wechat_articles=None, run_info=None):
     meta_lookup = {}
     for a in articles:
         aid = a.get('id') or a.get('aid', '')
@@ -252,6 +310,14 @@ def gen_html(articles, github, run_info=None):
             ('Hermes Agent 3分钟装好', '7641162958797685288', '座谈客'),
         ]),
     ]
+    
+    # Add WeChat public account articles as a category
+    if wechat_articles:
+        wx_items = []
+        for a in wechat_articles:
+            wx_items.append((a['title'][:60], a['url'], a['source']))
+        if wx_items:
+            all_cats.append(('微信公众号', wx_items))
     
     cards_html = ''
     cat_count = {}
@@ -447,6 +513,7 @@ body{{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backg
 .tag-技术前沿{{background:#f3e5f5;color:#6a1b9a}}
 .tag-对比评测{{background:#fbe9e7;color:#bf360c}}
 .tag-行业动态{{background:#fff3e0;color:#e65100}}
+.tag-微信公众号{{background:#07c160;color:#fff}}
 .card .title{{display:block;font-size:15px;font-weight:600;line-height:1.5;color:#1a1a2e;text-decoration:none}}
 .card .title:hover{{color:#e94560;text-decoration:underline}}
 .card .meta{{font-size:12px;color:#999;margin-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}}
@@ -531,6 +598,11 @@ if __name__ == '__main__':
     fresh_articles = scrape_toutiao()
     print(f'  {len(fresh_articles)} fresh articles found')
     
+    # Scrape WeChat public account articles
+    print('Scraping WeChat public accounts...')
+    wechat_articles = scrape_wechat()
+    print(f'  {len(wechat_articles)} wechat articles found')
+    
     # Merge: fresh takes priority, cached fills the gaps
     merged = {}
     # First add fresh articles (they're current)
@@ -545,6 +617,11 @@ if __name__ == '__main__':
             a['url'] = f'https://www.toutiao.com/article/{aid}/'
             a['time'] = a.get('pub', '')
             merged[aid] = a
+    
+    # Add wechat articles (don't overwrite toutiao)
+    for a in wechat_articles:
+        if a['aid'] not in merged:
+            merged[a['aid']] = a
     
     articles = list(merged.values())
     print(f'Total after merge: {len(articles)} articles')
@@ -582,7 +659,7 @@ if __name__ == '__main__':
         'total': len(articles),
         'cached': len(cached_articles),
     }
-    size = gen_html(articles, github, run_info)
+    size = gen_html(articles, github, wechat_articles, run_info)
     print(f'  Written {size} bytes to {OUTPUT}')
     
     # Save updated cache
