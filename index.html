@@ -62,12 +62,12 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 </div>
 
 <div class="gh">
-<span class="g">&#11088; GitHub <strong>186,927</strong> Stars</span>
-<span class="g">&#127829; <strong>32,165</strong> Forks</span>
+<span class="g">&#11088; GitHub <strong>186,940</strong> Stars</span>
+<span class="g">&#127829; <strong>32,166</strong> Forks</span>
 <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.6.5" target="_blank">&#128640; v0.16.0 &rarr;</a>
 </div>
 
-<div class="refresh-info">🕐 最后更新: 2026-06-08 22:06 | 📥 本次爬取 13 篇 | 📚 页面展示 72 篇 | 💾 缓存 66 篇</div>
+<div class="refresh-info">🕐 最后更新: 2026-06-08 22:20 | 📥 本次爬取 12 篇 | 📚 页面展示 72 篇 | 💾 缓存 56 篇</div>
 
 <div class="tb">
 <span class="l">&#128204; 排序：</span>
@@ -78,7 +78,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 <button class="sb" data-k="reply" onclick="s('reply')">&#128172; 评论</button>
 <button class="sb" data-k="score" onclick="s('score')">⭐ 评分</button>
 </div>
-<button class="ob a" id="ob" onclick="to()">降序</button>
+<button class="ob a" id="ob" onclick="to()">&#9660; 降序</button>
 <span class="l" style="margin-left:8px">&#127991; 分类：</span>
 <div class="fg"><button class="fb a" data-c="all" onclick="fc('all')">📋 全部 <span class="n">72</span></button><button class="fb" data-c="Nous官方" onclick="fc('Nous官方')">Nous官方 <span class="n">10</span></button><button class="fb" data-c="桌面端" onclick="fc('桌面端')">桌面端 <span class="n">3</span></button><button class="fb" data-c="使用技巧" onclick="fc('使用技巧')">使用技巧 <span class="n">28</span></button><button class="fb" data-c="技术前沿" onclick="fc('技术前沿')">技术前沿 <span class="n">11</span></button><button class="fb" data-c="对比评测" onclick="fc('对比评测')">对比评测 <span class="n">5</span></button><button class="fb" data-c="行业动态" onclick="fc('行业动态')">行业动态 <span class="n">15</span></button></div>
 </div>
@@ -932,7 +932,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-06-08" data-read="0" data-like="0" data-reply="3" data-score="2" data-cat="对比评测">
+    <div class="card" data-date="2026-06-08" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="对比评测">
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-对比评测">对比评测</div>
@@ -940,7 +940,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
           <div class="meta">
             <span>✍️ AI实战派老陈</span><span>🕐 2026-06-08</span>
             <span class="s">👁 0</span>
-            <span class="s">💬 3</span>
+            <span class="s">💬 0</span>
             <span class="s">👍 0</span>
           </div>
         </div>
@@ -1220,7 +1220,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-06-08" data-read="0" data-like="0" data-reply="1" data-score="2" data-cat="行业动态">
+    <div class="card" data-date="2026-06-08" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="行业动态">
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-行业动态">行业动态</div>
@@ -1228,7 +1228,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
           <div class="meta">
             <span>✍️ 座谈客</span><span>🕐 2026-06-08</span>
             <span class="s">👁 0</span>
-            <span class="s">💬 1</span>
+            <span class="s">💬 0</span>
             <span class="s">👍 0</span>
           </div>
         </div>
@@ -1243,25 +1243,11 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 <p><span id="ftd"></span></p>
 </div>
 
+<script src="scripts/news-sort.js"></script>
 <script>
-let sk='date',od='desc',cc='all';
-function s(k){document.querySelectorAll('.sb').forEach(b=>b.classList.remove('a'));
-document.querySelector('.sb[data-k="'+k+'"]').classList.add('a');sk=k;r();}
-function to(){od=od==='desc'?'asc':'desc';
-document.getElementById('ob').textContent=od==='desc'?'降序':'升序';r();}
-function fc(c){document.querySelectorAll('.fb').forEach(b=>b.classList.remove('a'));
-document.querySelector('.fb[data-c="'+c+'"]').classList.add('a');cc=c;r();}
-function r(){let cards=Array.from(document.getElementById('c').querySelectorAll('.card'));
-cards.forEach(c=>c.style.display=cc==='all'||c.dataset.cat===cc?'':'none');
-let f=cc==='all'?cards:cards.filter(c=>c.dataset.cat===cc);
-let o=od==='desc'?-1:1;
-f.sort((a,b)=>{let va,vb;
-if(sk==='date'){va=new Date(a.dataset.date).getTime();vb=new Date(b.dataset.date).getTime();}
-else{va=parseInt(a.dataset[sk]);vb=parseInt(b.dataset[sk]);}
-return(va-vb)*o;});
-f.forEach(c=>document.getElementById('c').appendChild(c));
-document.getElementById('nc').textContent='显示 '+f.length+' 篇报道';}
-document.getElementById('ftd').textContent='更新于 '+new Date().toLocaleString('zh-CN');
+function s(k){window._newsSort(k)}
+function to(){window._newsToggle()}
+function fc(c){window._newsFilter(c)}
 </script>
 </body>
 </html>

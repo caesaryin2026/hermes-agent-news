@@ -489,7 +489,7 @@ body{{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backg
 <button class="sb" data-k="reply" onclick="s('reply')">&#128172; 评论</button>
 <button class="sb" data-k="score" onclick="s('score')">⭐ 评分</button>
 </div>
-<button class="ob a" id="ob" onclick="to()">降序</button>
+<button class="ob a" id="ob" onclick="to()">&#9660; 降序</button>
 <span class="l" style="margin-left:8px">&#127991; 分类：</span>
 <div class="fg">{cat_buttons}</div>
 </div>
@@ -502,25 +502,11 @@ body{{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backg
 <p><span id="ftd"></span></p>
 </div>
 
+<script src="scripts/news-sort.js"></script>
 <script>
-let sk='date',od='desc',cc='all';
-function s(k){{document.querySelectorAll('.sb').forEach(b=>b.classList.remove('a'));
-document.querySelector('.sb[data-k="'+k+'"]').classList.add('a');sk=k;r();}}
-function to(){{od=od==='desc'?'asc':'desc';
-document.getElementById('ob').textContent=od==='desc'?'降序':'升序';r();}}
-function fc(c){{document.querySelectorAll('.fb').forEach(b=>b.classList.remove('a'));
-document.querySelector('.fb[data-c="'+c+'"]').classList.add('a');cc=c;r();}}
-function r(){{let cards=Array.from(document.getElementById('c').querySelectorAll('.card'));
-cards.forEach(c=>c.style.display=cc==='all'||c.dataset.cat===cc?'':'none');
-let f=cc==='all'?cards:cards.filter(c=>c.dataset.cat===cc);
-let o=od==='desc'?-1:1;
-f.sort((a,b)=>{{let va,vb;
-if(sk==='date'){{va=new Date(a.dataset.date).getTime();vb=new Date(b.dataset.date).getTime();}}
-else{{va=parseInt(a.dataset[sk]);vb=parseInt(b.dataset[sk]);}}
-return(va-vb)*o;}});
-f.forEach(c=>document.getElementById('c').appendChild(c));
-document.getElementById('nc').textContent='显示 '+f.length+' 篇报道';}}
-document.getElementById('ftd').textContent='更新于 '+new Date().toLocaleString('zh-CN');
+function s(k){{window._newsSort(k)}}
+function to(){{window._newsToggle()}}
+function fc(c){{window._newsFilter(c)}}
 </script>
 </body>
 </html>'''
