@@ -1,21 +1,24 @@
 #!/bin/bash
-cd ~/hermes-news || exit 1
+cd ~/hermes-news || { echo "FAIL: cd ~/hermes-news"; exit 1; }
 
-# Ensure SSH agent has the key
-eval $(ssh-agent -s) > /dev/null 2>&1
-ssh-add ~/.ssh/github_dog 2>/dev/null || true
+echo "[$(date "+%Y-%m-%d %H:%M")] Starting..." >> /tmp/hermes-news.log
 
-# Run the scraper
+# Run scraper
 python3 scripts/refresh_news.py >> /tmp/hermes-news.log 2>&1
+SCRIPT_OK=$?
 
-# Push to GitHub
-git add -A
-if git diff --cached --quiet; then
-    echo "No changes to commit" >> /tmp/hermes-news.log
-else
-    git commit -m "auto $(date +%H:%M)" >> /tmp/hermes-news.log 2>&1
-    git pull --rebase origin main >> /tmp/hermes-news.log 2>&1
-    git push origin main >> /tmp/hermes-news.log 2>&1
+if [ $SCRIPT_OK -ne 0 ]; then
+    echo "WARN: Script exit code $SCRIPT_OK" >> /tmp/hermes-news.log
 fi
 
-echo "--- Done at $(date) ---" >> /tmp/hermes-news.log
+# Push to GitHub (SSH key handles auth via ~/.ssh/config)
+git add -A
+if git diff --cached --quiet; then
+    echo "No changes" >> /tmp/hermes-news.log
+else
+    git commit -m "auto $(date +%H:%M)" >> /tmp/hermes-news.log 2>&1
+    git pull --rebase origin main >> /tmp/hermes-news.log 2>&1 || true
+    git push origin main >> /tmp/hermes-news.log 2>&1 && echo "Pushed OK" >> /tmp/hermes-news.log
+fi
+
+echo "[$(date "+%Y-%m-%d %H:%M")] Done" >> /tmp/hermes-news.log
