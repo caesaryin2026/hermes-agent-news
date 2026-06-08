@@ -413,7 +413,7 @@ def gen_html(articles, github, run_info=None):
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Hermes Agent 中文资讯</title>
+<title>马哥新闻@caesaryin</title>
 <style>
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f0f2f5;color:#1a1a2e;max-width:960px;margin:0 auto;padding:16px}}
@@ -467,7 +467,7 @@ body{{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backg
 <body>
 
 <div class="hdr">
-<h1>&#128269; <span>Hermes</span> Agent 中文资讯</h1>
+<h1>&#128269; 马哥新闻 <span>@caesaryin</span></h1>
 <div class="sub">2026年06月 · 今日头条搜索 · 共 {total} 篇</div>
 <div class="s"><div>&#128240; <strong>{total}</strong> 篇</div><div>&#128065; <strong>{fmt(total_reads)}</strong> 总阅读</div><div>&#128077; <strong>{fmt(total_likes)}</strong> 总点赞</div></div>
 </div>
