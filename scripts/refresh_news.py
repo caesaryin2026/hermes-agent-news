@@ -849,23 +849,16 @@ if __name__ == '__main__':
             merged[aid] = a
             fresh_aids.add(aid)
 
-    # e) Fresh Reddit articles
-    for a in reddit:
-        aid = a['aid']
-        if aid not in merged:
-            a['cat'] = classify_article(a['title'], a['source'])
-            merged[aid] = a
-            fresh_aids.add(aid)
+    # e) Fresh Reddit/Zhihu articles (may be empty if blocked)
+    for src in [reddit, zhihu]:
+        for a in src:
+            aid = a['aid']
+            if aid not in merged:
+                a['cat'] = classify_article(a['title'], a.get('source', ''))
+                merged[aid] = a
+                fresh_aids.add(aid)
 
-    # f) Fresh Zhihu articles
-    for a in zhihu:
-        aid = a['aid']
-        if aid not in merged:
-            a['cat'] = classify_article(a['title'], a['source'])
-            merged[aid] = a
-            fresh_aids.add(aid)
-
-    # g) Cached articles that aren't in fresh but are known or have metadata
+    # f) Cached articles that aren't in fresh but are known or have metadata
     for a in cached:
         aid = a.get('aid', '')
         if aid and aid not in merged:
