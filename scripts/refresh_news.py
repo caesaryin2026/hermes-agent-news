@@ -661,6 +661,7 @@ def gen_html(articles, fresh_count, cached_count, github, run_history=None):
         cnt = cat_count.get(ck, 0)
         if cnt > 0:
             cat_buttons += f'<button class="fb" data-c="{ck}" onclick="fc(\'{ck}\')">{ck} <span class="n">{cnt}</span></button>'
+    cat_buttons += f'<button class="fb" data-c="valuable" onclick="fc(\'valuable\')">⭐ 有价值 <span class="n" id="vc">0</span></button>'
 
     # Cards
     cards_html = ''
@@ -678,7 +679,7 @@ def gen_html(articles, fresh_count, cached_count, github, run_history=None):
         stars_full = '★' * score + '☆' * (5 - score)
         reads_fmt = fmt_reads(reads)
 
-        cards_html += f'''    <div class="card" data-date="{pub}" data-read="{reads}" data-like="{likes}" data-reply="{comments}" data-score="{score}" data-cat="{cat}">
+        cards_html += f'''    <div class="card" data-date="{pub}" data-read="{reads}" data-like="{likes}" data-reply="{comments}" data-score="{score}" data-cat="{cat}" data-url="{url}">
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-{cat}">{cat}</div>
@@ -691,7 +692,9 @@ def gen_html(articles, fresh_count, cached_count, github, run_history=None):
           </div>
         </div>
         <div class="card-keymsg">{keymsg}</div>
-        <div class="card-score">{stars_full}<br><span class="score-num">{score}.0</span></div>
+        <div class="card-score">{stars_full}<br><span class="score-num">{score}.0</span>
+          <span class="vb-btn" onclick="_newsToggleValuable(\'{url}\')"><span class="vb">☆</span></span>
+        </div>
       </div>
     </div>
 '''
@@ -773,6 +776,10 @@ body{{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backg
 .history-table .hist-ok{{color:#22c55e}}
 .history-table .hist-warn{{color:#f59e0b}}
 .hist-empty{{text-align:center;padding:24px;color:#999;font-size:13px}}
+.card.valuable{{border-left:3px solid #f59e0b!important;background:#fffdf0!important}}
+.vb-btn{{cursor:pointer;display:inline-block;font-size:16px;line-height:1;margin-top:4px;transition:transform .2s}}
+.vb-btn:hover{{transform:scale(1.3)}}
+.vb-btn .vb{{color:#d4a017}}
 </style>
 </head>
 <body>
