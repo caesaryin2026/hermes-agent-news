@@ -1,1 +1,1 @@
-[{"time": "2026-06-09 11:58", "sources": {"toutiao": 36, "wechat": 20, "hn": 20, "github": 10}, "total_fresh": 86, "total_articles": 202, "duration": 131.0, "exit_status": "ok"}]
+[{"time": "2026-06-09 11:58", "sources": {"toutiao": 36, "wechat": 20, "hn": 20, "github": 10}, "total_fresh": 86, "total_articles": 202, "duration": 131.0, "exit_status": "ok"}, {"time": "2026-06-09 12:02", "sources": {"toutiao": 39, "wechat": 20, "hn": 20, "github": 10}, "total_fresh": 89, "total_articles": 236, "duration": 132.5, "exit_status": "ok"}]
