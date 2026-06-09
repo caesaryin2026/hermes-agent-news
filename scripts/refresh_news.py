@@ -10,6 +10,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.dirname(SCRIPT_DIR)
 OUTPUT = os.path.join(REPO_DIR, 'hermes-news.html')
 CACHE_FILE = os.path.join(REPO_DIR, 'articles_cache.json')
+HISTORY_FILE = os.path.join(REPO_DIR, 'run_history.json')
 TEMP_DIR = os.path.join(REPO_DIR, '.cache')
 os.makedirs(TEMP_DIR, exist_ok=True)
 
@@ -518,6 +519,24 @@ def save_cache(articles):
         json.dump(articles, f, ensure_ascii=False, default=str)
 
 
+def load_history():
+    """Load run history."""
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE) as f:
+                return json.load(f)
+        except:
+            return []
+    return []
+
+
+def save_history(history):
+    """Save run history (keep last 72 entries)."""
+    history = history[-72:]
+    with open(HISTORY_FILE, 'w', encoding='utf-8') as f:
+        json.dump(history, f, ensure_ascii=False, default=str)
+
+
 # ═══════════════════════════════════════════
 # HTML GENERATION
 # ═══════════════════════════════════════════
@@ -588,8 +607,35 @@ def gen_keymsg(title, cat):
     return f'{cat}相关报道'
 
 
-def gen_html(articles, fresh_count, cached_count, github):
+def gen_html(articles, fresh_count, cached_count, github, run_history=None):
     """Generate the full HTML page."""
+    # Build history table HTML
+    hist_section = ''
+    if run_history:
+        hist_rows = ''
+        for h in run_history[-48:]:
+            t = h.get('time', '?')
+            src = h.get('sources', {})
+            tt = src.get('toutiao', 0) or src.get('tt', 0)
+            wx = src.get('wechat', 0) or src.get('wx', 0)
+            hn = src.get('hn', 0)
+            gh = src.get('github', 0) or src.get('gh', 0)
+            total_f = h.get('total_fresh', tt + wx + hn + gh)
+            dur = h.get('duration', 0)
+            status = h.get('exit_status', 'ok')
+            cl = 'hist-ok' if status == 'ok' else 'hist-warn'
+            ds = f'{dur:.0f}s' if isinstance(dur, (int, float)) else str(dur)
+            tk = '&#9989;' if status == 'ok' else '&#9888;&#65039;'
+            hist_rows += f'<tr><td>{t}</td><td>{tt}</td><td>{wx}</td><td>{hn}</td><td>{gh}</td><td class="hist-num">{total_f}</td><td>{ds}</td><td class="{cl}">{tk}</td></tr>\n'
+        hist_section = f'''<div class="history-section">
+<h3 class="history-title">&#128202; 爬取历史 <span class="history-sub">最近{min(len(run_history),48)}次运行</span></h3>
+<div class="history-table-wrap">
+<table class="history-table">
+<thead><tr><th>时间</th><th>头条</th><th>微信</th><th>HN</th><th>GitHub</th><th>合计</th><th>耗时</th><th>状态</th></tr></thead>
+<tbody>{hist_rows}</tbody>
+</table></div></div>'''
+    else:
+        hist_section = '<div class="history-section"><h3 class="history-title">&#128202; 爬取历史</h3><div class="hist-empty">暂无历史记录</div></div>'
     # Sort by pub date (newest first), unknown dates at the end
     def sort_key(a):
         pub = a.get('pub', '')
@@ -715,6 +761,18 @@ body{{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backg
 .ft{{text-align:center;font-size:12px;color:#bbb;padding:24px 0;border-top:1px solid #eee;margin-top:16px}}
 .ft a{{color:#e94560;text-decoration:none}}
 @media(max-width:600px){{body{{padding:10px}}.hdr{{padding:20px 16px}}}}
+.history-section{{background:#fff;border-radius:12px;padding:16px 18px;margin:16px 0;box-shadow:0 1px 4px rgba(0,0,0,.06)}}
+.history-title{{font-size:16px;font-weight:600;color:#1a1a2e;margin-bottom:12px}}
+.history-sub{{font-size:12px;color:#999;font-weight:400;margin-left:8px}}
+.history-table-wrap{{overflow-x:auto}}
+.history-table{{width:100%;border-collapse:collapse;font-size:12px}}
+.history-table th{{background:#1a1a2e;color:#fff;padding:8px 10px;text-align:center;font-weight:500;white-space:nowrap}}
+.history-table td{{padding:6px 10px;text-align:center;border-bottom:1px solid #f0f0f0;color:#555}}
+.history-table tr:hover td{{background:#f8f9fa}}
+.history-table .hist-num{{font-weight:600;color:#e94560}}
+.history-table .hist-ok{{color:#22c55e}}
+.history-table .hist-warn{{color:#f59e0b}}
+.hist-empty{{text-align:center;padding:24px;color:#999;font-size:13px}}
 </style>
 </head>
 <body>
@@ -761,8 +819,56 @@ function s(k){{window._newsSort(k)}}
 function to(){{window._newsToggle()}}
 function fc(c){{window._newsFilter(c)}}
 </script>
+{hist_section}
 </body>
 </html>'''
+    hist_html = ''
+    if run_history:
+        hist_rows = ''
+        for h in run_history[-48:]:
+            t = h.get('time', '?')
+            src = h.get('sources', {})
+            t_count = src.get('toutiao', 0) or src.get('tt', 0)
+            w_count = src.get('wechat', 0) or src.get('wx', 0)
+            hn_count = src.get('hn', 0)
+            gh_count = src.get('github', 0) or src.get('gh', 0)
+            total_f = h.get('total_fresh', t_count + w_count + hn_count + gh_count)
+            dur = h.get('duration', 0)
+            status = h.get('exit_status', 'ok')
+            status_class = 'hist-ok' if status == 'ok' else 'hist-warn'
+            dur_s = f'{dur:.0f}s' if isinstance(dur, (int, float)) else str(dur)
+            tick = '&#9989;' if status == 'ok' else '&#9888;&#65039;'
+            hist_rows += f'    <tr>\n'
+            hist_rows += f'        <td>{t}</td>\n'
+            hist_rows += f'        <td>{t_count}</td>\n'
+            hist_rows += f'        <td>{w_count}</td>\n'
+            hist_rows += f'        <td>{hn_count}</td>\n'
+            hist_rows += f'        <td>{gh_count}</td>\n'
+            hist_rows += f'        <td class="hist-num">{total_f}</td>\n'
+            hist_rows += f'        <td>{dur_s}</td>\n'
+            hist_rows += f'        <td class="{status_class}">{tick}</td>\n'
+            hist_rows += f'    </tr>\n'
+        hist_html += '<table class="history-table">\n'
+        hist_html += '<thead><tr>\n'
+        hist_html += '    <th>时间</th><th>头条</th><th>微信</th><th>HN</th><th>GitHub</th><th>合计</th><th>耗时</th><th>状态</th>\n'
+        hist_html += '</tr></thead>\n'
+        hist_html += f'<tbody>{hist_rows}</tbody>\n'
+        hist_html += '</table>'
+    else:
+        hist_html += '<div class="hist-empty">暂无历史记录</div>'
+    hist_html += '</div></div>'
+
+    html += hist_html
+    
+    # Footer
+    html += f'''
+    <div class="ft">
+    <p>数据来源：<a href="https://so.toutiao.com/search?keyword=Hermes%20Agent" target="_blank">今日头条</a> · <a href="https://weixin.sogou.com/weixin?type=2&query=Hermes+Agent" target="_blank">微信公众号</a> · <a href="https://news.ycombinator.com/" target="_blank">Hacker News</a> · <a href="https://github.com/NousResearch/hermes-agent/issues" target="_blank">GitHub Issues</a></p>
+    <p>由小马S（Hermes Agent）自动聚合 · 每小时更新 <span id="ftd"></span></p>
+    </div>
+    
+    </body>
+    </html>'''
     with open(OUTPUT, 'w', encoding='utf-8') as f:
         f.write(html)
     # Also write index.html for GitHub Pages
@@ -849,7 +955,8 @@ if __name__ == '__main__':
             merged[aid] = a
             fresh_aids.add(aid)
 
-    # e) Fresh Reddit/Zhihu articles (may be empty if blocked)
+    # e) Fresh Reddit/Zhihu articles (currently blocked by network/CDN)
+    # Kept for future use if proxy becomes available
     for src in [reddit, zhihu]:
         for a in src:
             aid = a['aid']
@@ -892,17 +999,33 @@ if __name__ == '__main__':
     else:
         print('All articles have metadata, skipping fetch')
 
-    # 5. Get GitHub stats
+    # 5. Record run history
+    run_history = load_history()
+    elapsed = time.time() - start_time
+    run_record = {
+        'time': datetime.now().strftime('%Y-%m-%d %H:%M'),
+        'sources': {'toutiao': len(toutiao), 'wechat': len(wechat),
+                     'hn': len(hn), 'github': len(gh)},
+        'total_fresh': len(toutiao) + len(wechat) + len(hn) + len(gh),
+        'total_articles': len(articles),
+        'duration': round(elapsed, 1),
+        'exit_status': 'ok',
+    }
+    run_history.append(run_record)
+    save_history(run_history)
+    print(f'  History saved ({len(run_history)} runs)')
+
+    # 6. Get GitHub stats
     print('Fetching GitHub data...')
     github = fetch_github()
     print(f'  Stars: {github["stars"]}, Forks: {github["forks"]}')
 
-    # 6. Generate HTML
+    # 7. Generate HTML with history
     print('Generating HTML...')
-    size = gen_html(articles, len(toutiao), len(cached), github)
+    size = gen_html(articles, len(toutiao), len(cached), github, run_history)
     print(f'  Written {size} bytes to {OUTPUT}')
 
-    # 7. Save cache
+    # 8. Save cache
     save_cache(articles)
     print(f'  Saved {len(articles)} articles to cache')
 

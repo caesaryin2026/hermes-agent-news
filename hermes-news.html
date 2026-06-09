@@ -54,23 +54,35 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 .ft{text-align:center;font-size:12px;color:#bbb;padding:24px 0;border-top:1px solid #eee;margin-top:16px}
 .ft a{color:#e94560;text-decoration:none}
 @media(max-width:600px){body{padding:10px}.hdr{padding:20px 16px}}
+.history-section{background:#fff;border-radius:12px;padding:16px 18px;margin:16px 0;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.history-title{font-size:16px;font-weight:600;color:#1a1a2e;margin-bottom:12px}
+.history-sub{font-size:12px;color:#999;font-weight:400;margin-left:8px}
+.history-table-wrap{overflow-x:auto}
+.history-table{width:100%;border-collapse:collapse;font-size:12px}
+.history-table th{background:#1a1a2e;color:#fff;padding:8px 10px;text-align:center;font-weight:500;white-space:nowrap}
+.history-table td{padding:6px 10px;text-align:center;border-bottom:1px solid #f0f0f0;color:#555}
+.history-table tr:hover td{background:#f8f9fa}
+.history-table .hist-num{font-weight:600;color:#e94560}
+.history-table .hist-ok{color:#22c55e}
+.history-table .hist-warn{color:#f59e0b}
+.hist-empty{text-align:center;padding:24px;color:#999;font-size:13px}
 </style>
 </head>
 <body>
 
 <div class="hdr">
 <h1>&#128269; 马哥新闻 <span>@caesaryin</span></h1>
-<div class="sub">2026年06月 · 多源聚合 · 共 163 篇</div>
-<div class="s"><div>&#128240; <strong>163</strong> 篇</div><div>&#128065; <strong>4.9万</strong> 总阅读</div><div>&#128077; <strong>1.1万</strong> 总点赞</div></div>
+<div class="sub">2026年06月 · 多源聚合 · 共 200 篇</div>
+<div class="s"><div>&#128240; <strong>200</strong> 篇</div><div>&#128065; <strong>5.8万</strong> 总阅读</div><div>&#128077; <strong>1.1万</strong> 总点赞</div></div>
 </div>
 
 <div class="gh">
-<span class="g">&#11088; GitHub <strong>187,607</strong> Stars</span>
-<span class="g">&#127829; <strong>32,329</strong> Forks</span>
+<span class="g">&#11088; GitHub <strong>187,651</strong> Stars</span>
+<span class="g">&#127829; <strong>32,331</strong> Forks</span>
 <a href="https://github.com/NousResearch/hermes-agent" target="_blank">&#128640; GitHub &rarr;</a>
 </div>
 
-<div class="refresh-info">🕐 最后更新: 2026-06-09 11:26 | 📥 本次爬取 40 篇 | 📚 页面展示 163 篇 | 💾 缓存 110 篇</div>
+<div class="refresh-info">🕐 最后更新: 2026-06-09 11:58 | 📥 本次爬取 36 篇 | 📚 页面展示 200 篇 | 💾 缓存 163 篇</div>
 
 <div class="tb">
 <span class="l">&#128204; 排序：</span>
@@ -83,10 +95,10 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
 </div>
 <button class="ob a" id="ob" onclick="to()">&#9660; 降序</button>
 <span class="l" style="margin-left:8px">&#127991; 分类：</span>
-<div class="fg"><button class="fb a" data-c="all" onclick="fc('all')">📋 全部 <span class="n">163</span></button><button class="fb" data-c="Nous官方" onclick="fc('Nous官方')">Nous官方 <span class="n">3</span></button><button class="fb" data-c="桌面端" onclick="fc('桌面端')">桌面端 <span class="n">4</span></button><button class="fb" data-c="使用技巧" onclick="fc('使用技巧')">使用技巧 <span class="n">34</span></button><button class="fb" data-c="技术前沿" onclick="fc('技术前沿')">技术前沿 <span class="n">11</span></button><button class="fb" data-c="对比评测" onclick="fc('对比评测')">对比评测 <span class="n">6</span></button><button class="fb" data-c="行业动态" onclick="fc('行业动态')">行业动态 <span class="n">35</span></button><button class="fb" data-c="微信公众号" onclick="fc('微信公众号')">微信公众号 <span class="n">40</span></button><button class="fb" data-c="Hacker News" onclick="fc('Hacker News')">Hacker News <span class="n">20</span></button><button class="fb" data-c="GitHub Issues" onclick="fc('GitHub Issues')">GitHub Issues <span class="n">10</span></button></div>
+<div class="fg"><button class="fb a" data-c="all" onclick="fc('all')">📋 全部 <span class="n">200</span></button><button class="fb" data-c="Nous官方" onclick="fc('Nous官方')">Nous官方 <span class="n">4</span></button><button class="fb" data-c="桌面端" onclick="fc('桌面端')">桌面端 <span class="n">3</span></button><button class="fb" data-c="使用技巧" onclick="fc('使用技巧')">使用技巧 <span class="n">40</span></button><button class="fb" data-c="技术前沿" onclick="fc('技术前沿')">技术前沿 <span class="n">17</span></button><button class="fb" data-c="对比评测" onclick="fc('对比评测')">对比评测 <span class="n">5</span></button><button class="fb" data-c="行业动态" onclick="fc('行业动态')">行业动态 <span class="n">43</span></button><button class="fb" data-c="微信公众号" onclick="fc('微信公众号')">微信公众号 <span class="n">58</span></button><button class="fb" data-c="Hacker News" onclick="fc('Hacker News')">Hacker News <span class="n">20</span></button><button class="fb" data-c="GitHub Issues" onclick="fc('GitHub Issues')">GitHub Issues <span class="n">10</span></button></div>
 </div>
 
-<div class="nc" id="nc">显示 163 篇报道</div>
+<div class="nc" id="nc">显示 200 篇报道</div>
 <div id="c">    <div class="card" data-date="2026-06-09" data-read="0" data-like="0" data-reply="0" data-score="3" data-cat="技术前沿">
       <div class="card-inner">
         <div class="card-main">
@@ -119,19 +131,131 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-06-08" data-read="34" data-like="0" data-reply="0" data-score="2" data-cat="对比评测">
+    <div class="card" data-date="2026-06-08" data-read="24" data-like="1" data-reply="0" data-score="3" data-cat="使用技巧">
       <div class="card-inner">
         <div class="card-main">
-          <div class="tag tag-对比评测">对比评测</div>
-          <a href="https://www.toutiao.com/article/7648995955001262635/" target="_blank" class="title">Hermes Agent vs OpenClaw</a>
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7648995478747365922/" target="_blank" class="title">hermes agent安装教程:不用折腾环境变量，轻松搭建专属数字分身</a>
           <div class="meta">
-            <span>✍️ 勇敢的饼干强尼</span><span>🕐 2026-06-08</span>
-            <span class="s">👁 34</span>
+            <span>✍️ 中国企业报数字经济</span><span>🕐 2026-06-08</span>
+            <span class="s">👁 24</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 1</span>
+          </div>
+        </div>
+        <div class="card-keymsg">安装与配置相关教程</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-08" data-read="234" data-like="14" data-reply="4" data-score="3" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7648904459526930990/" target="_blank" class="title">Hermes Agent小白指南:从入门到真正会用</a>
+          <div class="meta">
+            <span>✍️ 正正AI杂说</span><span>🕐 2026-06-08</span>
+            <span class="s">👁 234</span>
+            <span class="s">💬 4</span>
+            <span class="s">👍 14</span>
+          </div>
+        </div>
+        <div class="card-keymsg">详细指南与最佳实践</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-08" data-read="749" data-like="15" data-reply="5" data-score="3" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7647354528748143156/" target="_blank" class="title">开源智能体平台HermesAgent首超OpenClaw，成全球调用量最高AI应用</a>
+          <div class="meta">
+            <span>✍️ 金融界</span><span>🕐 2026-06-08</span>
+            <span class="s">👁 749</span>
+            <span class="s">💬 5</span>
+            <span class="s">👍 15</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-08" data-read="52" data-like="3" data-reply="0" data-score="3" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7649018283416420918/" target="_blank" class="title">Hermes Agent完全入门指南:从“装完就跑”到“越用越聪明”</a>
+          <div class="meta">
+            <span>✍️ 机器觉醒</span><span>🕐 2026-06-08</span>
+            <span class="s">👁 52</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 3</span>
+          </div>
+        </div>
+        <div class="card-keymsg">详细指南与最佳实践</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-08" data-read="35" data-like="0" data-reply="0" data-score="3" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7648995955001262635/" target="_blank" class="title">把“爱马仕”装进QQ!超详细教程手把手教你给Hermes Agent接入QQ</a>
+          <div class="meta">
+            <span>✍️ 穿石的水滴Plus</span><span>🕐 2026-06-08</span>
+            <span class="s">👁 35</span>
             <span class="s">💬 0</span>
             <span class="s">👍 0</span>
           </div>
         </div>
-        <div class="card-keymsg">对比评测相关报道</div>
+        <div class="card-keymsg">实用教程与操作指南</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-08" data-read="992" data-like="23" data-reply="3" data-score="3" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7649036649342566975/" target="_blank" class="title">我刚学的Agent框架，就成了坟头草!</a>
+          <div class="meta">
+            <span>✍️ CSDN</span><span>🕐 2026-06-08</span>
+            <span class="s">👁 992</span>
+            <span class="s">💬 3</span>
+            <span class="s">👍 23</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-08" data-read="37" data-like="3" data-reply="0" data-score="2" data-cat="技术前沿">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-技术前沿">技术前沿</div>
+          <a href="https://www.toutiao.com/article/7648697214725915151/" target="_blank" class="title">开源工具Agent Reach:一行命令给AI Agent接多平台网络，能做什么</a>
+          <div class="meta">
+            <span>✍️ OPC进化论</span><span>🕐 2026-06-08</span>
+            <span class="s">👁 37</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 3</span>
+          </div>
+        </div>
+        <div class="card-keymsg">技术前沿相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-08" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7648961075798458926/" target="_blank" class="title">AI Agent生态爆发前夜:从DeepSeek生态群看三大机遇与落地路径</a>
+          <div class="meta">
+            <span>✍️ 专注</span><span>🕐 2026-06-08</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
@@ -167,38 +291,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-06-08" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="使用技巧">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-使用技巧">使用技巧</div>
-          <a href="https://www.toutiao.com/article/7648961075798458926/" target="_blank" class="title">阿里云百炼CLI正式开源!一行命令，让所有AI Agent满血升级</a>
-          <div class="meta">
-            <span>✍️ 产品视界</span><span>🕐 2026-06-08</span>
-            <span class="s">👁 0</span>
-            <span class="s">💬 0</span>
-            <span class="s">👍 0</span>
-          </div>
-        </div>
-        <div class="card-keymsg">使用技巧相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
-      </div>
-    </div>
-    <div class="card" data-date="2026-06-08" data-read="925" data-like="22" data-reply="3" data-score="3" data-cat="行业动态">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-行业动态">行业动态</div>
-          <a href="https://www.toutiao.com/article/7649036649342566975/" target="_blank" class="title">我刚学的Agent框架，就成了坟头草!</a>
-          <div class="meta">
-            <span>✍️ CSDN</span><span>🕐 2026-06-08</span>
-            <span class="s">👁 925</span>
-            <span class="s">💬 3</span>
-            <span class="s">👍 22</span>
-          </div>
-        </div>
-        <div class="card-keymsg">行业动态相关报道</div>
-        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
-      </div>
-    </div>
     <div class="card" data-date="2026-06-08" data-read="70" data-like="3" data-reply="0" data-score="2" data-cat="行业动态">
       <div class="card-inner">
         <div class="card-main">
@@ -212,22 +304,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
           </div>
         </div>
         <div class="card-keymsg">行业动态相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
-      </div>
-    </div>
-    <div class="card" data-date="2026-06-08" data-read="49" data-like="3" data-reply="0" data-score="2" data-cat="使用技巧">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-使用技巧">使用技巧</div>
-          <a href="https://www.toutiao.com/article/7649018283416420918/" target="_blank" class="title">Hermes Agent别停留在裸装:五个配置让它从"能聊"变"能用"</a>
-          <div class="meta">
-            <span>✍️ OPC进化论</span><span>🕐 2026-06-08</span>
-            <span class="s">👁 49</span>
-            <span class="s">💬 0</span>
-            <span class="s">👍 3</span>
-          </div>
-        </div>
-        <div class="card-keymsg">配置方法与技巧</div>
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
@@ -279,6 +355,54 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
+    <div class="card" data-date="2026-06-07" data-read="157" data-like="5" data-reply="1" data-score="3" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7648238839336600099/" target="_blank" class="title">2026年6月最新Hermes Agent完整安装配置与实战指南(国内专属优化版)</a>
+          <div class="meta">
+            <span>✍️ 中国企业报数字经济</span><span>🕐 2026-06-07</span>
+            <span class="s">👁 157</span>
+            <span class="s">💬 1</span>
+            <span class="s">👍 5</span>
+          </div>
+        </div>
+        <div class="card-keymsg">安装与配置相关教程</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-07" data-read="23" data-like="0" data-reply="0" data-score="3" data-cat="技术前沿">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-技术前沿">技术前沿</div>
+          <a href="https://www.toutiao.com/article/7648216246525100584/" target="_blank" class="title">别再把Agent当聊天框:4款工具深度对比</a>
+          <div class="meta">
+            <span>✍️ 碳基生物墨墨</span><span>🕐 2026-06-07</span>
+            <span class="s">👁 23</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">多维度对比分析</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-07" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7648629428209173044/" target="_blank" class="title">全球最大Agent底座诞生!OpenClaw原生登陆16亿台Windows</a>
+          <div class="meta">
+            <span>✍️ 云科技</span><span>🕐 2026-06-07</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
     <div class="card" data-date="2026-06-07" data-read="1040" data-like="18" data-reply="10" data-score="3" data-cat="技术前沿">
       <div class="card-inner">
         <div class="card-main">
@@ -327,22 +451,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-06-07" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="对比评测">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-对比评测">对比评测</div>
-          <a href="https://www.toutiao.com/article/7648629428209173044/" target="_blank" class="title">2026年十大AI Agent平台推荐，强烈建议收藏:扣子 vs Midjourney</a>
-          <div class="meta">
-            <span>✍️ 英明果断露珠EVCyClQ</span><span>🕐 2026-06-07</span>
-            <span class="s">👁 0</span>
-            <span class="s">💬 0</span>
-            <span class="s">👍 0</span>
-          </div>
-        </div>
-        <div class="card-keymsg">对比评测相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
-      </div>
-    </div>
     <div class="card" data-date="2026-06-07" data-read="318" data-like="8" data-reply="0" data-score="3" data-cat="使用技巧">
       <div class="card-inner">
         <div class="card-main">
@@ -356,6 +464,54 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
           </div>
         </div>
         <div class="card-keymsg">使用技巧相关报道</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-06" data-read="214" data-like="10" data-reply="1" data-score="3" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7648136448679428648/" target="_blank" class="title">手把手教你部署AI助手!Hermes-Agent 中文实战指南，建议收藏</a>
+          <div class="meta">
+            <span>✍️ 静听潮音</span><span>🕐 2026-06-06</span>
+            <span class="s">👁 214</span>
+            <span class="s">💬 1</span>
+            <span class="s">👍 10</span>
+          </div>
+        </div>
+        <div class="card-keymsg">详细指南与最佳实践</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-06" data-read="0" data-like="1" data-reply="0" data-score="3" data-cat="技术前沿">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-技术前沿">技术前沿</div>
+          <a href="https://www.toutiao.com/article/7648167997588193801/" target="_blank" class="title">openai/codex:88k Stars 的开源 Coding Agent 完整架构</a>
+          <div class="meta">
+            <span>✍️ 1评论</span><span>🕐 2026-06-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 1</span>
+          </div>
+        </div>
+        <div class="card-keymsg">技术架构深度解析</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-06" data-read="15" data-like="1" data-reply="0" data-score="3" data-cat="技术前沿">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-技术前沿">技术前沿</div>
+          <a href="https://www.toutiao.com/article/7648258587051868672/" target="_blank" class="title">企业级Agent框架该长什么样?三层架构背后的设计逻辑</a>
+          <div class="meta">
+            <span>✍️ 旅行家比尔6g1</span><span>🕐 2026-06-06</span>
+            <span class="s">👁 15</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 1</span>
+          </div>
+        </div>
+        <div class="card-keymsg">技术架构深度解析</div>
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
@@ -404,22 +560,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
           </div>
         </div>
         <div class="card-keymsg">技术前沿相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
-      </div>
-    </div>
-    <div class="card" data-date="2026-06-06" data-read="0" data-like="1" data-reply="0" data-score="2" data-cat="行业动态">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-行业动态">行业动态</div>
-          <a href="https://www.toutiao.com/article/7648167997588193801/" target="_blank" class="title">16亿Windows用户，一夜冲进Agent时代!</a>
-          <div class="meta">
-            <span>✍️ 雨中邂逅诗意</span><span>🕐 2026-06-06</span>
-            <span class="s">👁 0</span>
-            <span class="s">💬 0</span>
-            <span class="s">👍 1</span>
-          </div>
-        </div>
-        <div class="card-keymsg">行业动态相关报道</div>
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
@@ -533,6 +673,54 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         </div>
         <div class="card-keymsg">行业动态相关报道</div>
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-05" data-read="5" data-like="0" data-reply="1" data-score="2" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7647575662655504936/" target="_blank" class="title">从戴尔、联想财报看AI:Agent热潮起来了，但落地的账还没算平</a>
+          <div class="meta">
+            <span>✍️ OPC进化论</span><span>🕐 2026-06-05</span>
+            <span class="s">👁 5</span>
+            <span class="s">💬 1</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-05" data-read="0" data-like="0" data-reply="0" data-score="3" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7647707682526216719/" target="_blank" class="title">Hermes-Agent 是什么?开源免费AI助手保姆级教程</a>
+          <div class="meta">
+            <span>✍️ 我心飞扬v8</span><span>🕐 2026-06-05</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">实用教程与操作指南</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-05" data-read="11" data-like="1" data-reply="0" data-score="2" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7647791523362374171/" target="_blank" class="title">AI Agent迎来爆发，科技巨头全面转向</a>
+          <div class="meta">
+            <span>✍️ 玩笑spike</span><span>🕐 2026-06-05</span>
+            <span class="s">👁 11</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 1</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
     <div class="card" data-date="2026-06-05" data-read="601" data-like="22" data-reply="0" data-score="3" data-cat="行业动态">
@@ -663,6 +851,54 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
+    <div class="card" data-date="2026-06-04" data-read="39" data-like="3" data-reply="0" data-score="3" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7647211783026901539/" target="_blank" class="title">OpenCode 火到 168k Star，不只是开源 Agent，附一键安装指南</a>
+          <div class="meta">
+            <span>✍️ 老年人学AI</span><span>🕐 2026-06-04</span>
+            <span class="s">👁 39</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 3</span>
+          </div>
+        </div>
+        <div class="card-keymsg">安装与配置相关教程</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-04" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7647439511437197864/" target="_blank" class="title">误删28745行代码，谷歌第一代云端Agent，存工作环境割裂等问题</a>
+          <div class="meta">
+            <span>✍️ 魔法豆花UPxuR2</span><span>🕐 2026-06-04</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-04" data-read="0" data-like="2" data-reply="0" data-score="2" data-cat="技术前沿">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-技术前沿">技术前沿</div>
+          <a href="https://www.toutiao.com/article/7647241028373676595/" target="_blank" class="title">AI Agent产业现状解析:三次技术进化成趋势，500万人才缺口等三重挑战待破</a>
+          <div class="meta">
+            <span>✍️ 聪明的松鼠H5X8f</span><span>🕐 2026-06-04</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 2</span>
+          </div>
+        </div>
+        <div class="card-keymsg">技术前沿相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
     <div class="card" data-date="2026-06-04" data-read="3" data-like="0" data-reply="0" data-score="2" data-cat="行业动态">
       <div class="card-inner">
         <div class="card-main">
@@ -693,22 +929,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         </div>
         <div class="card-keymsg">安全机制与审批链路</div>
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
-      </div>
-    </div>
-    <div class="card" data-date="2026-06-04" data-read="39" data-like="3" data-reply="0" data-score="2" data-cat="对比评测">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-对比评测">对比评测</div>
-          <a href="https://www.toutiao.com/article/7647211783026901539/" target="_blank" class="title">2026年十大AI Agent平台推荐，强烈建议收藏:扣子 vs Midjourney</a>
-          <div class="meta">
-            <span>✍️ 英明果断露珠EVCyClQ</span><span>🕐 2026-06-04</span>
-            <span class="s">👁 39</span>
-            <span class="s">💬 0</span>
-            <span class="s">👍 3</span>
-          </div>
-        </div>
-        <div class="card-keymsg">对比评测相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
     <div class="card" data-date="2026-06-04" data-read="172" data-like="7" data-reply="1" data-score="2" data-cat="行业动态">
@@ -791,6 +1011,22 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
+    <div class="card" data-date="2026-06-03" data-read="67" data-like="3" data-reply="0" data-score="2" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7646793566123770368/" target="_blank" class="title">05hermes agent怎么建立多个agent，kanban又是什么，怎么使用</a>
+          <div class="meta">
+            <span>✍️ 疯狂的豇豆</span><span>🕐 2026-06-03</span>
+            <span class="s">👁 67</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 3</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
     <div class="card" data-date="2026-06-03" data-read="176" data-like="5" data-reply="0" data-score="2" data-cat="使用技巧">
       <div class="card-inner">
         <div class="card-main">
@@ -855,19 +1091,35 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-06-02" data-read="64" data-like="1" data-reply="1" data-score="2" data-cat="行业动态">
+    <div class="card" data-date="2026-06-02" data-read="64" data-like="1" data-reply="1" data-score="2" data-cat="技术前沿">
       <div class="card-inner">
         <div class="card-main">
-          <div class="tag tag-行业动态">行业动态</div>
-          <a href="https://www.toutiao.com/article/7646651158072689158/" target="_blank" class="title">浏览器秒变手机!中科院开源Agent训练场，微信、原神都能跑</a>
+          <div class="tag tag-技术前沿">技术前沿</div>
+          <a href="https://www.toutiao.com/article/7646651158072689158/" target="_blank" class="title">4.8 万 stars 开源 Agent Skills，让你的 AI 写代码不再偷工减料</a>
           <div class="meta">
-            <span>✍️ 新浪财经</span><span>🕐 2026-06-02</span>
+            <span>✍️ 鱼亦乐</span><span>🕐 2026-06-02</span>
             <span class="s">👁 64</span>
             <span class="s">💬 1</span>
             <span class="s">👍 1</span>
           </div>
         </div>
-        <div class="card-keymsg">接入微信的完整流程</div>
+        <div class="card-keymsg">技术前沿相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-02" data-read="7" data-like="0" data-reply="0" data-score="2" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7646733969077174799/" target="_blank" class="title">从「龙虾」到「爱马仕」:Agent 框架大爆发，普通人到底怎么选?</a>
+          <div class="meta">
+            <span>✍️ 老七聊AI</span><span>🕐 2026-06-02</span>
+            <span class="s">👁 7</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
@@ -903,20 +1155,36 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-06-01" data-read="818" data-like="37" data-reply="4" data-score="4" data-cat="使用技巧">
+    <div class="card" data-date="2026-06-01" data-read="818" data-like="37" data-reply="4" data-score="3" data-cat="行业动态">
       <div class="card-inner">
         <div class="card-main">
-          <div class="tag tag-使用技巧">使用技巧</div>
-          <a href="https://www.toutiao.com/article/7646320837049451054/" target="_blank" class="title">Hermes Agent 学习指南:完全掌握与自定义agent</a>
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7646320837049451054/" target="_blank" class="title">Hermes Agent高阶必装!8个实用技能，老手都在用</a>
           <div class="meta">
-            <span>✍️ 新钛云服</span><span>🕐 2026-06-01</span>
+            <span>✍️ 知识有点料</span><span>🕐 2026-06-01</span>
             <span class="s">👁 818</span>
             <span class="s">💬 4</span>
             <span class="s">👍 37</span>
           </div>
         </div>
-        <div class="card-keymsg">详细指南与最佳实践</div>
-        <div class="card-score">★★★★☆<br><span class="score-num">4.0</span></div>
+        <div class="card-keymsg">行业动态相关报道</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06-01" data-read="2" data-like="0" data-reply="0" data-score="2" data-cat="行业动态">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-行业动态">行业动态</div>
+          <a href="https://www.toutiao.com/article/7646095197767615019/" target="_blank" class="title">AI Agent终于有脸了:开源框架做成公共零件</a>
+          <div class="meta">
+            <span>✍️ 树洞坚果</span><span>🕐 2026-06-01</span>
+            <span class="s">👁 2</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">行业动态相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
     <div class="card" data-date="2026-06-01" data-read="24" data-like="0" data-reply="0" data-score="3" data-cat="对比评测">
@@ -967,6 +1235,22 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
+    <div class="card" data-date="2026-05-30" data-read="2493" data-like="52" data-reply="7" data-score="4" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7645565147485946394/" target="_blank" class="title">Hermes Agent 全解析|从安装到成本，7 个问题讲透 AI Agent 真实玩法</a>
+          <div class="meta">
+            <span>✍️ R的曙光</span><span>🕐 2026-05-30</span>
+            <span class="s">👁 2.5千</span>
+            <span class="s">💬 7</span>
+            <span class="s">👍 52</span>
+          </div>
+        </div>
+        <div class="card-keymsg">安装与配置相关教程</div>
+        <div class="card-score">★★★★☆<br><span class="score-num">4.0</span></div>
+      </div>
+    </div>
     <div class="card" data-date="2026-05-30" data-read="133" data-like="5" data-reply="0" data-score="2" data-cat="行业动态">
       <div class="card-inner">
         <div class="card-main">
@@ -1015,19 +1299,35 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
+    <div class="card" data-date="2026-05-27" data-read="4350" data-like="164" data-reply="16" data-score="4" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7644482396104737295/" target="_blank" class="title">Hermes Agent 5个隐藏技巧，提升开发效率200%</a>
+          <div class="meta">
+            <span>✍️ 创意读书旅行玩家</span><span>🕐 2026-05-27</span>
+            <span class="s">👁 4.3千</span>
+            <span class="s">💬 16</span>
+            <span class="s">👍 164</span>
+          </div>
+        </div>
+        <div class="card-keymsg">实用技巧分享</div>
+        <div class="card-score">★★★★☆<br><span class="score-num">4.0</span></div>
+      </div>
+    </div>
     <div class="card" data-date="2026-05-26" data-read="10" data-like="1" data-reply="0" data-score="2" data-cat="使用技巧">
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-使用技巧">使用技巧</div>
-          <a href="https://www.toutiao.com/article/7643996441664324123/" target="_blank" class="title">升级你的 Hermes Agent 的 10 个方法</a>
+          <a href="https://www.toutiao.com/article/7643996441664324123/" target="_blank" class="title">超简单!Hermes Agent 安装攻略来袭</a>
           <div class="meta">
-            <span>✍️ 余晖晚风信</span><span>🕐 2026-05-26</span>
+            <span>✍️ 海上看日出的船夫</span><span>🕐 2026-05-26</span>
             <span class="s">👁 10</span>
             <span class="s">💬 0</span>
             <span class="s">👍 1</span>
           </div>
         </div>
-        <div class="card-keymsg">使用技巧相关报道</div>
+        <div class="card-keymsg">安装与配置相关教程</div>
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
@@ -1127,22 +1427,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-05-22" data-read="2318" data-like="73" data-reply="14" data-score="5" data-cat="使用技巧">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-使用技巧">使用技巧</div>
-          <a href="https://www.toutiao.com/article/7642432058253492755/" target="_blank" class="title">hermes agent安装教程:不用折腾环境变量，轻松搭建专属数字分身</a>
-          <div class="meta">
-            <span>✍️ 中国企业报数字经济</span><span>🕐 2026-05-22</span>
-            <span class="s">👁 2.3千</span>
-            <span class="s">💬 14</span>
-            <span class="s">👍 73</span>
-          </div>
-        </div>
-        <div class="card-keymsg">安装与配置相关教程</div>
-        <div class="card-score">★★★★★<br><span class="score-num">5.0</span></div>
-      </div>
-    </div>
     <div class="card" data-date="2026-05-22" data-read="6" data-like="0" data-reply="0" data-score="2" data-cat="行业动态">
       <div class="card-inner">
         <div class="card-main">
@@ -1159,6 +1443,22 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
+    <div class="card" data-date="2026-05-22" data-read="2318" data-like="73" data-reply="14" data-score="5" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7642432058253492755/" target="_blank" class="title">hermes agent安装教程:不用折腾环境变量，轻松搭建专属数字分身</a>
+          <div class="meta">
+            <span>✍️ 中国企业报数字经济</span><span>🕐 2026-05-22</span>
+            <span class="s">👁 2.3千</span>
+            <span class="s">💬 14</span>
+            <span class="s">👍 73</span>
+          </div>
+        </div>
+        <div class="card-keymsg">安装与配置相关教程</div>
+        <div class="card-score">★★★★★<br><span class="score-num">5.0</span></div>
+      </div>
+    </div>
     <div class="card" data-date="2026-05-21" data-read="273" data-like="6" data-reply="1" data-score="3" data-cat="技术前沿">
       <div class="card-inner">
         <div class="card-main">
@@ -1173,6 +1473,22 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         </div>
         <div class="card-keymsg">技术架构深度解析</div>
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-05-20" data-read="8" data-like="0" data-reply="0" data-score="2" data-cat="Nous官方">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-Nous官方">Nous官方</div>
+          <a href="https://www.toutiao.com/article/7641958581205598735/" target="_blank" class="title">Hermes官方桌面版发布!我踩过的坑都在这了</a>
+          <div class="meta">
+            <span>✍️ 智东西</span><span>🕐 2026-05-20</span>
+            <span class="s">👁 8</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">桌面端功能体验</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
     <div class="card" data-date="2026-05-20" data-read="22" data-like="1" data-reply="0" data-score="2" data-cat="使用技巧">
@@ -1204,22 +1520,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
           </div>
         </div>
         <div class="card-keymsg">行业动态相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
-      </div>
-    </div>
-    <div class="card" data-date="2026-05-20" data-read="8" data-like="0" data-reply="0" data-score="2" data-cat="使用技巧">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-使用技巧">使用技巧</div>
-          <a href="https://www.toutiao.com/article/7641958581205598735/" target="_blank" class="title">Hermes Agent 3分钟装好，有手就行不报错</a>
-          <div class="meta">
-            <span>✍️ 座谈客</span><span>🕐 2026-05-20</span>
-            <span class="s">👁 8</span>
-            <span class="s">💬 0</span>
-            <span class="s">👍 0</span>
-          </div>
-        </div>
-        <div class="card-keymsg">使用技巧相关报道</div>
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
@@ -1255,6 +1555,22 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
+    <div class="card" data-date="2026-05-18" data-read="253" data-like="11" data-reply="2" data-score="3" data-cat="使用技巧">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-使用技巧">使用技巧</div>
+          <a href="https://www.toutiao.com/article/7640886355874054707/" target="_blank" class="title">Hermes Agent:从1个AI到完整营销公司，软件工程师必看指南</a>
+          <div class="meta">
+            <span>✍️ 老猿视角</span><span>🕐 2026-05-18</span>
+            <span class="s">👁 253</span>
+            <span class="s">💬 2</span>
+            <span class="s">👍 11</span>
+          </div>
+        </div>
+        <div class="card-keymsg">详细指南与最佳实践</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
     <div class="card" data-date="2026-05-18" data-read="31" data-like="3" data-reply="0" data-score="2" data-cat="使用技巧">
       <div class="card-inner">
         <div class="card-main">
@@ -1285,22 +1601,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         </div>
         <div class="card-keymsg">桌面端功能体验</div>
         <div class="card-score">★★★★☆<br><span class="score-num">4.0</span></div>
-      </div>
-    </div>
-    <div class="card" data-date="2026-05-18" data-read="253" data-like="11" data-reply="2" data-score="3" data-cat="使用技巧">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-使用技巧">使用技巧</div>
-          <a href="https://www.toutiao.com/article/7640886355874054707/" target="_blank" class="title">Hermes Agent:从1个AI到完整营销公司，软件工程师必看指南</a>
-          <div class="meta">
-            <span>✍️ 老猿视角</span><span>🕐 2026-05-18</span>
-            <span class="s">👁 253</span>
-            <span class="s">💬 2</span>
-            <span class="s">👍 11</span>
-          </div>
-        </div>
-        <div class="card-keymsg">详细指南与最佳实践</div>
-        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
     <div class="card" data-date="2026-05-17" data-read="26" data-like="2" data-reply="1" data-score="3" data-cat="使用技巧">
@@ -1419,15 +1719,15 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-使用技巧">使用技巧</div>
-          <a href="https://www.toutiao.com/article/7637461399098114595/" target="_blank" class="title">Hermes Agent 安装教程:2分钟免费拥有你的私人 AI 大脑!</a>
+          <a href="https://www.toutiao.com/article/7637461399098114595/" target="_blank" class="title">我把 Hermes Agent 接进了微信:一份能照着做的保姆级避坑指南</a>
           <div class="meta">
-            <span>✍️ 科技百谈</span><span>🕐 2026-05-08</span>
+            <span>✍️ 人人都是产品经理</span><span>🕐 2026-05-08</span>
             <span class="s">👁 1.7千</span>
             <span class="s">💬 4</span>
             <span class="s">👍 51</span>
           </div>
         </div>
-        <div class="card-keymsg">安装与配置相关教程</div>
+        <div class="card-keymsg">详细指南与最佳实践</div>
         <div class="card-score">★★★★☆<br><span class="score-num">4.0</span></div>
       </div>
     </div>
@@ -1447,20 +1747,20 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-05-02" data-read="252" data-like="2" data-reply="0" data-score="2" data-cat="桌面端">
+    <div class="card" data-date="2026-05-02" data-read="252" data-like="2" data-reply="0" data-score="3" data-cat="对比评测">
       <div class="card-inner">
         <div class="card-main">
-          <div class="tag tag-桌面端">桌面端</div>
-          <a href="https://www.toutiao.com/article/7635221067510661678/" target="_blank" class="title">告别“日志刷屏”！Hermes可视化控制台，Agent 在想什么一目了然</a>
+          <div class="tag tag-对比评测">对比评测</div>
+          <a href="https://www.toutiao.com/article/7635221067510661678/" target="_blank" class="title">OpenHuman和Hermes Agent谁更强?一篇对比说清楚，别选错了</a>
           <div class="meta">
-            <span>✍️ 未知来源</span><span>🕐 2026-05-02</span>
+            <span>✍️ AI实战派老陈</span><span>🕐 2026-05-02</span>
             <span class="s">👁 252</span>
             <span class="s">💬 0</span>
             <span class="s">👍 2</span>
           </div>
         </div>
-        <div class="card-keymsg">桌面端相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+        <div class="card-keymsg">多维度对比分析</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
     <div class="card" data-date="2026-04-13" data-read="283" data-like="5" data-reply="0" data-score="2" data-cat="行业动态">
@@ -1493,6 +1793,22 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         </div>
         <div class="card-keymsg">行业动态相关报道</div>
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-04-06" data-read="324" data-like="3" data-reply="0" data-score="3" data-cat="对比评测">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-对比评测">对比评测</div>
+          <a href="https://www.toutiao.com/article/7625453095128760867/" target="_blank" class="title">Agent 框架全景对比 2026</a>
+          <div class="meta">
+            <span>✍️ 上一页</span><span>🕐 2026-04-06</span>
+            <span class="s">👁 324</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 3</span>
+          </div>
+        </div>
+        <div class="card-keymsg">多维度对比分析</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
       </div>
     </div>
     <div class="card" data-date="2026-04-04" data-read="3721" data-like="96" data-reply="0" data-score="5" data-cat="技术前沿">
@@ -1579,7 +1895,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd92LxRDiQmM36cjb-BbXDah8P7NkCERPhWyzvzCu2mA19ksB-roMxIfyu1XBqm5yj4Kn9xsL5HWJNGLhKZzwlk7ah_yx9M9eMGUibapFHhQop6wqEh5dLKuW9VMSyW4NFPoHxG4g0AlGfDBHaPTeWe8cNHjISmwOiQhyPzefzWAvbzAjcIGepUqA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">好消息:Hermes Agent桌面版支持简体中文了</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd92LxRDiQmM36cjb-BbXDah8P7NkCERPhWyzvzCu2mA19ksB-roMxIfyu1XBqm5yj4Kn9xsL5HWJNGLhKZzwlk7SlI6Qo4L7MTsayhPeWstj2B0szm-aB4VhrHscGTkCk3BpjuK9g3RBuR8DdWY0Zf4-pVBILbGZ8pd1-MVY4704LwdVqCwyPdzA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">好消息:Hermes Agent桌面版支持简体中文了</a>
           <div class="meta">
             <span>✍️ 微调人生6</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1595,7 +1911,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9MZvOZTpqmAUMJ8eiUqOqu9Rqiq8WQHB5CZPW_ubmjfu1YiFFSFIIPS2XootDqP2ePsxyMSOiI4zsbZwxtGN1GmvJuXT9afEOVS-jJbktBdGdbrhF-yBidxBBjOZ3GKeTP2roUKAEeW93ZKmFrvrSrt0wbyNv_KI3D8A2GIH7yCDRtmyIGw2VAg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent品牌研究报告</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd9MZvOZTpqmAUMJ8eiUqOqu9Rqiq8WQHB5CZPW_ubmjfu1YiFFSFIIPS2XootDqP2ePsxyMSOiI4zsbZwxtGN1Gm8_n5htdBpHsVC1TiTjwHTslzwvs75x5QFbZraArQOgyywAf1CZjzTlD8WTM_u2v5iDcWSH7uD_3CPFFy3dNX5j3x9Nw6p-Fg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">Hermes Agent品牌研究报告</a>
           <div class="meta">
             <span>✍️ AI科普馆</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1611,7 +1927,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9JFl8Os_RNGdogrVBgMRooFP9j_1m1laqe0z7WPXyCsVGWbkwnipwHu6IQY-rDYzkAfkuuWFsy-Ak6fBtKKKjf1fCtdmoEOvXnADrPxOabjfTyth8C6VXOppIKRrMT5dlj43dJLa4tfpxa7qy80wiAEwjNqEthwuYj11HheYJRethWLv6O878UA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">关于 Hermes agent 使用的体验</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd9JFl8Os_RNGdogrVBgMRooFP9j_1m1laqe0z7WPXyCsVGWbkwnipwHu6IQY-rDYzkAfkuuWFsy-Ak6fBtKKKjf0RKTDc7yySIWsCx4N6nMAni6VkO14cISumDJHyo2O6seaF9URtYLCOkOq2Nv35s6-toH6KI38S5SSD1U8xqrfGjotuuiAmOIg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">关于 Hermes agent 使用的体验</a>
           <div class="meta">
             <span>✍️ 一只猫的幻想</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1627,7 +1943,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9w2Ti5eTcDAXtLGcJhbmHZfiP3GafIxHyUdO_jnGV_4vHsnNvrxD0pKAClabIn_w9aCDruhZy7oQN8tJleJv9ktoH1NEpE-nCLTCXro0_iqA9o-TaTBv6nW7NbLlSxx7a6lmYJRkuziVh-KrGDQRUT4vyfULpTwKKFi7yMpWX3O_uL0unUdKkuw..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent 桌面应用终于来了!</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd9w2Ti5eTcDAXtLGcJhbmHZfiP3GafIxHyUdO_jnGV_4vHsnNvrxD0pKAClabIn_w9aCDruhZy7oQN8tJleJv9kgwjfOh8XyC47Cn4ZMAyuup9CObZ9w5qenECcOAQF4ZwjXFt30Zyl0-mE42GH0avUFgYkpgwg20AN0QWKZyxL7USYTqT4eyLmA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">Hermes Agent 桌面应用终于来了!</a>
           <div class="meta">
             <span>✍️ 林克养虾不摸鱼</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1643,7 +1959,23 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9YDlSADVNUOJyAwr6Fh_izDtZg3ueuj6q6hNyYYwHimZrL5rjzvOCerb44kd7a3Sekl9MWujO0o15tw_fp7NNNNND7PYmAdNjFo7wROLCpj6FgFXwKx4NN7_jmoP61WrRxplHNWTKlY_DX0xdwuUOK0EUZNUFM7pRUf3GoU31Y8ruL0unUdKkuw..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">我用Hermes Agent 搭建了自己的AI智能体(实操版)</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd9jhJqUm_Y0M5M2rAtXdhIVIcxWWnfbE36aze5uq3lbQ0HazPGM2Yymq8cguyM_jBy7SHas87vFv4ES3T8300k5agvJ8ki-sSZrBjCY1z5zCe9X9SR8rzyDpDNhLtGB1b3MlZXnUzrFup4YAPSE1-dsDkQL8cYD4BQqFGZk2KxQA06Ebq8fk9diw..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">2026HermesAgent深度研究报告</a>
+          <div class="meta">
+            <span>✍️ 人工智能与智慧城市圈</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd9YDlSADVNUOJyAwr6Fh_izDtZg3ueuj6q6hNyYYwHimZrL5rjzvOCerb44kd7a3Sekl9MWujO0o15tw_fp7NNNCGVXN48XN6Cm7ILIHXmMOMvwKOkSOWYSlE_b-BpREHH3Au82Wsby_4WNvF0o83Oh7XAZey2BzCt1B7QSLtIVM-q3X8EKMKOIA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">我用Hermes Agent 搭建了自己的AI智能体(实操版)</a>
           <div class="meta">
             <span>✍️ 跨境姐妹说</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1659,7 +1991,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9G-BClbZPGzuoX8RJFIWqMDBf1wJIFYRk8GWBQOgbikLfJJ8e62kckt0iwZhCUeVOt0mRPZ-t9_edKpdPjehAEFnWfTc3wNgyQDT4SFBBXWdsmDlGfIWslDvqm6OxO-JIbEqFiv4iR8vay1JXjksHWZcdZff9K8UvOQT9irzUM6qjotuuiAmOIg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent:让你的AI智能体越用越聪明</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd9G-BClbZPGzuoX8RJFIWqMDBf1wJIFYRk8GWBQOgbikLfJJ8e62kckt0iwZhCUeVOt0mRPZ-t9_edKpdPjehAEJG6q_vf_NmimJ3XZ64NweJ2wBSwUpbPufPSxaOzGgo0102Z-GMykoFj2kWtD_7jnMFmtaCK7kQaeSEnvykPi_iq3X8EKMKOIA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">Hermes Agent:让你的AI智能体越用越聪明</a>
           <div class="meta">
             <span>✍️ AI 提效</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1675,7 +2007,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9tnzdKVOT1-StmRNAPnt9-n176QA6t_Hx12UDFbmGsbIeeCS_ujkI3ePrD1a87jvCljXrdWDQU9aFOnS-BWWtN3TbxIKxWm_2p7rNsMTdpUZfFcLE4ADRuw8ioZ3Gy4eVTkWOpCP-yC47ftk_0dxvI333pvPzUcKoUTGLP_5FRFVflztgI7RZ1g..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent v0.16.0:桌面应用来了,CLI Agent 终于有正式面貌</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd9tnzdKVOT1-StmRNAPnt9-n176QA6t_Hx12UDFbmGsbIeeCS_ujkI3ePrD1a87jvCljXrdWDQU9aFOnS-BWWtNzzkCP9zQNjVuXmWLFq_gmC6jifHVs4vE0phqJb5jAT74HqRS5kpLNM-ZqAJ4uMnJsVhU-qGrR5kv91TfP-zIyXdrgozfSg6bw..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">Hermes Agent v0.16.0:桌面应用来了,CLI Agent 终于有正式面貌</a>
           <div class="meta">
             <span>✍️ 云枢智能</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1691,7 +2023,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd99BPF9d1V9XLOsnwyw_8PMx81tNXOhlwUcovqSH7SjC87D8VfbV6wpBGBxmG3_iFzOlckPGAvz2Fjt25-wpte1_vLr9zgrRvGLgms8Jf8Z6QHps9rvnSNECBj0L1AbO4wKp2VSZ0ylnWwK4z1l3C8B6pBRJ5jA7g8Qwf5F4TZAhrf3q8uRDTfkw..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent 2026.06.07 更新</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd99BPF9d1V9XLOsnwyw_8PMx81tNXOhlwUcovqSH7SjC87D8VfbV6wpBGBxmG3_iFzOlckPGAvz2Fjt25-wpte18XxXb07gUiG-t4l_dxlUURSIT4IdJDq6PD3xfh7vEDoR_X3X4oZtz3ga1zMz9HNYdpZvJHMntiBHYJtirFDzP5j3x9Nw6p-Fg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">Hermes Agent 2026.06.07 更新</a>
           <div class="meta">
             <span>✍️ All-in-One AI</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1707,7 +2039,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9UTr4vSnMR3JsrtGBVIg38-uAjHkyEGqYercp-tLBHFdza1ZJwabSXS9kAW3aR_ROmnOPPs9z4RXUl3fhsheOupO5PfcnhzdrlT1IZVpXBCCd14XWGOkOjnyl0t5B5RX3zGoNBQ7v1kF6TCUAp7LBqo-gYtXHjAc7Ge6StC8FZQSq3X8EKMKOIA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent 桌面端 v0.5.0</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9et0mqVeiZPc3o-cEmARslqXa8Fplpd9UTr4vSnMR3JsrtGBVIg38-uAjHkyEGqYercp-tLBHFdza1ZJwabSXS9kAW3aR_ROmnOPPs9z4RXUl3fhsheOutqQtJlllMWE3n9M7HRk-gmHjAUK0_O87ahdz68U8hEmkJomWPLNLygCtnRjtiTYPdMFzWpDD069wj5Z1aEfJf8SYTqT4eyLmA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD1BADAFEA2D2DDDA8F17C2F0EDF4DD83A9546A278F17" target="_blank" class="title">Hermes Agent 桌面端 v0.5.0</a>
           <div class="meta">
             <span>✍️ 龙行AI实验室</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1723,7 +2055,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9TL1wKHl_fYssG42AcOaAwVMSX5ZXJjhL1w7UWZQgAy7NFirYtHBT_-Qr3lX1Lw_f1EJ_KmahIKV6rEEnt0pR5BpTc656EAZ2LJjQcG7EBZsgos2K7jlCuNeM0modE6cCLPMRFf_1rImZ2Fgs8hnxnSQlWPGGsh5RYdQyxF2cgUfYl_Q5RRZQjg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent 完整入门指南</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd9TL1wKHl_fYssG42AcOaAwVMSX5ZXJjhL1w7UWZQgAy7NFirYtHBT_-Qr3lX1Lw_f1EJ_KmahIKV6rEEnt0pR5Dvyae1EKSS4ixZMN6xg7HjtCkd_9WRLl8pVJ8e7dmYBReDH8GINELa_YTiWiY_iQeK3xygyOLKDKIb09HlfUu7zAjcIGepUqA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent 完整入门指南</a>
           <div class="meta">
             <span>✍️ 番禺区劲拓体育</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1739,7 +2071,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9nk8rOHEtVdgb2NWOD4MsES0JB1MIiXgzsGgsXCTzKloGD1i1UzJ6C5zcQHFg_gPVYbF5UcZXznjOlgjRvpilOre6OjuqCy-f1PmaPArurZsiPirkobI3W48TQzBmNcErUTWBBCXZ5gsFuYFzPiOGmj4SfUtQaDIKyk62JUG0yBSFW6cwuUnkdA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 王炸来了...</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd9nk8rOHEtVdgb2NWOD4MsES0JB1MIiXgzsGgsXCTzKloGD1i1UzJ6C5zcQHFg_gPVYbF5UcZXznjOlgjRvpilOsQrPA1RUeYTwcknMuWgcsAp-JLkY2vFNyATyInZyvlY-ZVIZz3ELD1WO2KwYIYvB0PoAn16pMn93Iv9dFw-jT_0OK9DLfgmPA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent 王炸来了...</a>
           <div class="meta">
             <span>✍️ 老刘说NLP</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1755,7 +2087,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9J5yMSquuj4cYzZru7J5VsnBanpay1LwQtNAzLonDagp2BQR0kIFj9WbnAOgLJmv-I5GfYYePz4VaKwKSMWbbBbBwrtT2D21AL2k1mAJLSWZPn2onY5yEn4W9T39V9MFaYxUpOfUZlbw5_fGostsJKYyxsnFd0tVzlMPYArjJ8rINGbbB75bUeA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 深度研究报告(500字精简版)</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd9J5yMSquuj4cYzZru7J5VsnBanpay1LwQtNAzLonDagp2BQR0kIFj9WbnAOgLJmv-I5GfYYePz4VaKwKSMWbbBUa0SD_o-ScT90Q3Ib1osbJxeM6I_Kwff4mJy_JWZyOGH14c7Hbh0aOLqP76C4wGjpFPFSkEFemasNEnGNsr6sB5Nu7CnoSqqg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent 深度研究报告(500字精简版)</a>
           <div class="meta">
             <span>✍️ 亮彩中国</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1771,7 +2103,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9-mSSubbPl36vZ1z7m2qBzKKjPGkDslBRKZ9UM9VWV7aBfg_K9QdLTLZjvxek8ryUwIU64UzgQBmGAGqrzIdmOwHpDbnRYz0s1O_iQ8wgdaxJqvJgV8_l3CKDFiA0uTDIrmL-6rFwSjKrYvPY_4Mrg7Saww5ECPlQH7bWBiv0Xors46dn8Efgxg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 中文社区日报 6月9日</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd9-mSSubbPl36vZ1z7m2qBzKKjPGkDslBRKZ9UM9VWV7aBfg_K9QdLTLZjvxek8ryUwIU64UzgQBmGAGqrzIdmOzO6_i0KTOBccVt1xBltkfojMFE1noYiQgfn_jNnS71bigeJ2rjcMPzBZTucNgL1c_n3wvs--iQLvuJo0FhZC3bwdVqCwyPdzA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent 中文社区日报 6月9日</a>
           <div class="meta">
             <span>✍️ 恩佐的大书库</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1787,7 +2119,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd94bT75EbhR5bM2D_-SUD8Qed7AU8tPF_IdKeMOi8wSzF0vQK1dJxPGVoO1cb2dzEUvj2VISjiVFR0xWp2SYof3W5xusy9UBvGw0P-wc4x1Q35oXUBvKpfKKdU9Loi7jl94LFoXW-i2wwTOSQXrP3KSw1zK_KO5yA3DN-XOFenGi2AFV_3u-a3OQ..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent :一款能自我进化的开源 AI 智能体</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd94bT75EbhR5bM2D_-SUD8Qed7AU8tPF_IdKeMOi8wSzF0vQK1dJxPGVoO1cb2dzEUvj2VISjiVFR0xWp2SYof3R1-_oH9MM3EWfLdC4PbzYgvwWlb2B7vAEIovi-qCW1linYzVv3kyhWYY_cF81FoErWB55zSE3k573m89ngGc695Nu7CnoSqqg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent :一款能自我进化的开源 AI 智能体</a>
           <div class="meta">
             <span>✍️ 让世界多一点AI</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1803,7 +2135,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9sLcUyYbDJ9g5kU7dZHWzkVC77S3ypEnTQxYvuLSDBq7kKmpOUjVVpWS5yWSiT0Bjqux60hP_M_XE6moGvEWO-VM82WUTsLq2bT1HJFttPnYA2uOPYjH1gxRsfWbBv-6qJkFEP8C6NYoob0LilAx4sYUpIITlN6E9wT0GDHtuImmfxjh3za6jWA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 实战部署:一台 VPS 跑一个全天候 AI 助手</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd9sLcUyYbDJ9g5kU7dZHWzkVC77S3ypEnTQxYvuLSDBq7kKmpOUjVVpWS5yWSiT0Bjqux60hP_M_XE6moGvEWO-cDJUzFqS2prrTUIHSQEPw2f6N0oczdKrGmOWQBsPrC5YqK_aHiDiuewKAFZltzGOtWb3ZfcpHDSELYmXItfA9xAe0f8bRARvQ..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent 实战部署:一台 VPS 跑一个全天候 AI 助手</a>
           <div class="meta">
             <span>✍️ Git 拆解</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1819,7 +2151,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd925Lk7OR1yT-y1zR1fSShzwlghnMD62lKKeoI7kP7Xq-FDoRBjOJcXA5NIx4ndYg4nmn37lr1Tjj4QFgl8GovQY8O6r3jHv30zTNpeD5aE83QrcWQdAmiizhHmt7RZVZwbvMV1VPEvy6f-bCc9M2pDOvZ6b_sCdaovzX69UaxmM4C2Qmj7RgGwQ..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 简介</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd925Lk7OR1yT-y1zR1fSShzwlghnMD62lKKeoI7kP7Xq-FDoRBjOJcXA5NIx4ndYg4nmn37lr1Tjj4QFgl8GovQbRsxXXWa7Ge-87jFBlvSeomMpOfR7dA5YJrnsoNKu2-v4qnqoPZJnctZ3vMWPsP6HL3Lmuvx4ktTrYtDBob0MTRtmyIGw2VAg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent 简介</a>
           <div class="meta">
             <span>✍️ AI 及算法研究室</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1835,7 +2167,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9AM5I8jsufQvBZsi_pOxviamUkk3MejZ2WbQKF40-837tcc-41gu0kQ1g5_8bdaDdKJH2ejhRlsCIr6j0nGBUaZWWs7Jujq-QEndYekyFBi3b0XNzN-qHB6nkCsLHbR3six24uBQxcwFUPey_EXQcn4buFl7WbsKd0eebGugVeHLy08OLTBhW0A..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent解决的不是AI有多强,而是AI有多健忘</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd9AM5I8jsufQvBZsi_pOxviamUkk3MejZ2WbQKF40-837tcc-41gu0kQ1g5_8bdaDdKJH2ejhRlsCIr6j0nGBUaVXpGgda_PtI7QjgEA903smTiVWFxAQrKW3IyTbkw_i9Kn7xnoeUW1qQEwTCd7yEEl8n35UCtbkdfizRiN5x_cqFW6cwuUnkdA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent解决的不是AI有多强,而是AI有多健忘</a>
           <div class="meta">
             <span>✍️ 塔亮高途</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1851,7 +2183,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9ppEgx6bmr3gOik_nQJMPg99rdsLPFolSpGT_i9nDD_drS8D04Kpu0vYZ4ocd1fOqZrUy6V8GxMXi1GCgeLI0gc1Lv4J7zokgFYF_PADaNcxhVu8VmzgnCPZbQNWqUoj5f7jPvXaE4OLD0lWpb5718tOVgCWQryr0XbQX6uZs0dde0WC6Sbi7DA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 飞书消息发不出去了:排查记录</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd9ppEgx6bmr3gOik_nQJMPg99rdsLPFolSpGT_i9nDD_drS8D04Kpu0vYZ4ocd1fOqZrUy6V8GxMXi1GCgeLI0gXcWabk-k4KejdBgWjtQ4NScxyWlYVF2YboA4ywAb94zKBbtDWBcYbgC5bdA8myoEbdXyJBqyVqA0R5__EkjJY3yPfCoem7FzA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent 飞书消息发不出去了:排查记录</a>
           <div class="meta">
             <span>✍️ 小工具代码</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1867,7 +2199,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9gXWikOff5WU5TuftLLZgOAjS0ldz9GHwJTrNn9_setEINsO9pcDjaKm43595x5k6TN6k50n55dOIy0mXxCUJUFcL4V-SrrCcddN2AE0grWWnYTb7hyTJZJQVKHVgEcvfcQRCC0tUeHVyjtJhmS3vJhse8tsrQzdA0vCYUL2CZJsHpHkoPMgL3A..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 5大副业方向</a>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo9vZ5YXXYVWjc3o-cEmARslqXa8Fplpd9gXWikOff5WU5TuftLLZgOAjS0ldz9GHwJTrNn9_setEINsO9pcDjaKm43595x5k6TN6k50n55dOIy0mXxCUJUCI_-2pImAjRkT1N-4e56QPPBhrH3E_WtLzwi0tUBr4lrQDwz0ciNn4vCs_dN43PFfLi0m6A9NhMwllCDUbeBB1FH6In5Ei3zg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FCFD9B1A88CD0A0AFA9FC64B0EDFB8EAFCEAE946A278F19" target="_blank" class="title">Hermes Agent 5大副业方向</a>
           <div class="meta">
             <span>✍️ 旦旦人</span><span>🕐 2026-06</span>
             <span class="s">👁 0</span>
@@ -1879,23 +2211,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9w_SmF1-xjgkuEGcRRH40OrHd362ItIQM1SCGljE1o-W1lnZp5ax7vf1JSdIkRRu7XCBac_PPC-tkLml_eeAmObIyS43BeMhB-gfNOGPVpO7VI_T_kBYIdUWvXKUKC2xP9EB7Y69czmuZ8FK3MueB16hlhaVFZWrBpwOuS1-A1kHzAjcIGepUqA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">HermesAgent=本地运行AIAgent</a>
-          <div class="meta">
-            <span>✍️ BuzzAI</span><span>🕐 2026-06</span>
-            <span class="s">👁 0</span>
-            <span class="s">💬 0</span>
-            <span class="s">👍 0</span>
-          </div>
-        </div>
-        <div class="card-keymsg">微信公众号相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
-      </div>
-    </div>
-    <div class="card" data-date="2026-06" data-read="50" data-like="50" data-reply="29" data-score="4" data-cat="Hacker News">
+    <div class="card" data-date="2026-06" data-read="50" data-like="50" data-reply="31" data-score="4" data-cat="Hacker News">
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-Hacker News">Hacker News</div>
@@ -1903,7 +2219,7 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
           <div class="meta">
             <span>✍️ Hacker News</span><span>🕐 2026-06</span>
             <span class="s">👁 50</span>
-            <span class="s">💬 29</span>
+            <span class="s">💬 31</span>
             <span class="s">👍 50</span>
           </div>
         </div>
@@ -2379,6 +2695,326 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
       <div class="card-inner">
         <div class="card-main">
           <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd92LxRDiQmM36cjb-BbXDah8P7NkCERPhWyzvzCu2mA19ksB-roMxIfyu1XBqm5yj4Kn9xsL5HWJNGLhKZzwlk7ah_yx9M9eMGUibapFHhQop6wqEh5dLKuW9VMSyW4NFPoHxG4g0AlGfDBHaPTeWe8cNHjISmwOiQhyPzefzWAvbzAjcIGepUqA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">好消息:Hermes Agent桌面版支持简体中文了</a>
+          <div class="meta">
+            <span>✍️ 微调人生6</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">桌面端功能体验</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9MZvOZTpqmAUMJ8eiUqOqu9Rqiq8WQHB5CZPW_ubmjfu1YiFFSFIIPS2XootDqP2ePsxyMSOiI4zsbZwxtGN1GmvJuXT9afEOVS-jJbktBdGdbrhF-yBidxBBjOZ3GKeTP2roUKAEeW93ZKmFrvrSrt0wbyNv_KI3D8A2GIH7yCDRtmyIGw2VAg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent品牌研究报告</a>
+          <div class="meta">
+            <span>✍️ AI科普馆</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9JFl8Os_RNGdogrVBgMRooFP9j_1m1laqe0z7WPXyCsVGWbkwnipwHu6IQY-rDYzkAfkuuWFsy-Ak6fBtKKKjf1fCtdmoEOvXnADrPxOabjfTyth8C6VXOppIKRrMT5dlj43dJLa4tfpxa7qy80wiAEwjNqEthwuYj11HheYJRethWLv6O878UA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">关于 Hermes agent 使用的体验</a>
+          <div class="meta">
+            <span>✍️ 一只猫的幻想</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9w2Ti5eTcDAXtLGcJhbmHZfiP3GafIxHyUdO_jnGV_4vHsnNvrxD0pKAClabIn_w9aCDruhZy7oQN8tJleJv9ktoH1NEpE-nCLTCXro0_iqA9o-TaTBv6nW7NbLlSxx7a6lmYJRkuziVh-KrGDQRUT4vyfULpTwKKFi7yMpWX3O_uL0unUdKkuw..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent 桌面应用终于来了!</a>
+          <div class="meta">
+            <span>✍️ 林克养虾不摸鱼</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">桌面端功能体验</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9YDlSADVNUOJyAwr6Fh_izDtZg3ueuj6q6hNyYYwHimZrL5rjzvOCerb44kd7a3Sekl9MWujO0o15tw_fp7NNNNND7PYmAdNjFo7wROLCpj6FgFXwKx4NN7_jmoP61WrRxplHNWTKlY_DX0xdwuUOK0EUZNUFM7pRUf3GoU31Y8ruL0unUdKkuw..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">我用Hermes Agent 搭建了自己的AI智能体(实操版)</a>
+          <div class="meta">
+            <span>✍️ 跨境姐妹说</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9G-BClbZPGzuoX8RJFIWqMDBf1wJIFYRk8GWBQOgbikLfJJ8e62kckt0iwZhCUeVOt0mRPZ-t9_edKpdPjehAEFnWfTc3wNgyQDT4SFBBXWdsmDlGfIWslDvqm6OxO-JIbEqFiv4iR8vay1JXjksHWZcdZff9K8UvOQT9irzUM6qjotuuiAmOIg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent:让你的AI智能体越用越聪明</a>
+          <div class="meta">
+            <span>✍️ AI 提效</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9tnzdKVOT1-StmRNAPnt9-n176QA6t_Hx12UDFbmGsbIeeCS_ujkI3ePrD1a87jvCljXrdWDQU9aFOnS-BWWtN3TbxIKxWm_2p7rNsMTdpUZfFcLE4ADRuw8ioZ3Gy4eVTkWOpCP-yC47ftk_0dxvI333pvPzUcKoUTGLP_5FRFVflztgI7RZ1g..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent v0.16.0:桌面应用来了,CLI Agent 终于有正式面貌</a>
+          <div class="meta">
+            <span>✍️ 云枢智能</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">桌面端功能体验</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd99BPF9d1V9XLOsnwyw_8PMx81tNXOhlwUcovqSH7SjC87D8VfbV6wpBGBxmG3_iFzOlckPGAvz2Fjt25-wpte1_vLr9zgrRvGLgms8Jf8Z6QHps9rvnSNECBj0L1AbO4wKp2VSZ0ylnWwK4z1l3C8B6pBRJ5jA7g8Qwf5F4TZAhrf3q8uRDTfkw..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent 2026.06.07 更新</a>
+          <div class="meta">
+            <span>✍️ All-in-One AI</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">最新版本更新内容</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9UTr4vSnMR3JsrtGBVIg38-uAjHkyEGqYercp-tLBHFdza1ZJwabSXS9kAW3aR_ROmnOPPs9z4RXUl3fhsheOupO5PfcnhzdrlT1IZVpXBCCd14XWGOkOjnyl0t5B5RX3zGoNBQ7v1kF6TCUAp7LBqo-gYtXHjAc7Ge6StC8FZQSq3X8EKMKOIA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent 桌面端 v0.5.0</a>
+          <div class="meta">
+            <span>✍️ 龙行AI实验室</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">桌面端功能体验</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="3" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSob7ZUKYlF0pHc3o-cEmARslqXa8Fplpd9TL1wKHl_fYssG42AcOaAwVMSX5ZXJjhL1w7UWZQgAy7NFirYtHBT_-Qr3lX1Lw_f1EJ_KmahIKV6rEEnt0pR5BpTc656EAZ2LJjQcG7EBZsgos2K7jlCuNeM0modE6cCLPMRFf_1rImZ2Fgs8hnxnSQlWPGGsh5RYdQyxF2cgUfYl_Q5RRZQjg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6D68B35104D3D333461FA9FE3FB5B337E19E36A2787A9" target="_blank" class="title">Hermes Agent 完整入门指南</a>
+          <div class="meta">
+            <span>✍️ 番禺区劲拓体育</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">详细指南与最佳实践</div>
+        <div class="card-score">★★★☆☆<br><span class="score-num">3.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9nk8rOHEtVdgb2NWOD4MsES0JB1MIiXgzsGgsXCTzKloGD1i1UzJ6C5zcQHFg_gPVYbF5UcZXznjOlgjRvpilOre6OjuqCy-f1PmaPArurZsiPirkobI3W48TQzBmNcErUTWBBCXZ5gsFuYFzPiOGmj4SfUtQaDIKyk62JUG0yBSFW6cwuUnkdA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 王炸来了...</a>
+          <div class="meta">
+            <span>✍️ 老刘说NLP</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9J5yMSquuj4cYzZru7J5VsnBanpay1LwQtNAzLonDagp2BQR0kIFj9WbnAOgLJmv-I5GfYYePz4VaKwKSMWbbBbBwrtT2D21AL2k1mAJLSWZPn2onY5yEn4W9T39V9MFaYxUpOfUZlbw5_fGostsJKYyxsnFd0tVzlMPYArjJ8rINGbbB75bUeA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 深度研究报告(500字精简版)</a>
+          <div class="meta">
+            <span>✍️ 亮彩中国</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9-mSSubbPl36vZ1z7m2qBzKKjPGkDslBRKZ9UM9VWV7aBfg_K9QdLTLZjvxek8ryUwIU64UzgQBmGAGqrzIdmOwHpDbnRYz0s1O_iQ8wgdaxJqvJgV8_l3CKDFiA0uTDIrmL-6rFwSjKrYvPY_4Mrg7Saww5ECPlQH7bWBiv0Xors46dn8Efgxg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 中文社区日报 6月9日</a>
+          <div class="meta">
+            <span>✍️ 恩佐的大书库</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd94bT75EbhR5bM2D_-SUD8Qed7AU8tPF_IdKeMOi8wSzF0vQK1dJxPGVoO1cb2dzEUvj2VISjiVFR0xWp2SYof3W5xusy9UBvGw0P-wc4x1Q35oXUBvKpfKKdU9Loi7jl94LFoXW-i2wwTOSQXrP3KSw1zK_KO5yA3DN-XOFenGi2AFV_3u-a3OQ..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent :一款能自我进化的开源 AI 智能体</a>
+          <div class="meta">
+            <span>✍️ 让世界多一点AI</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9sLcUyYbDJ9g5kU7dZHWzkVC77S3ypEnTQxYvuLSDBq7kKmpOUjVVpWS5yWSiT0Bjqux60hP_M_XE6moGvEWO-VM82WUTsLq2bT1HJFttPnYA2uOPYjH1gxRsfWbBv-6qJkFEP8C6NYoob0LilAx4sYUpIITlN6E9wT0GDHtuImmfxjh3za6jWA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 实战部署:一台 VPS 跑一个全天候 AI 助手</a>
+          <div class="meta">
+            <span>✍️ Git 拆解</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">部署与安装流程</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd925Lk7OR1yT-y1zR1fSShzwlghnMD62lKKeoI7kP7Xq-FDoRBjOJcXA5NIx4ndYg4nmn37lr1Tjj4QFgl8GovQY8O6r3jHv30zTNpeD5aE83QrcWQdAmiizhHmt7RZVZwbvMV1VPEvy6f-bCc9M2pDOvZ6b_sCdaovzX69UaxmM4C2Qmj7RgGwQ..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 简介</a>
+          <div class="meta">
+            <span>✍️ AI 及算法研究室</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9AM5I8jsufQvBZsi_pOxviamUkk3MejZ2WbQKF40-837tcc-41gu0kQ1g5_8bdaDdKJH2ejhRlsCIr6j0nGBUaZWWs7Jujq-QEndYekyFBi3b0XNzN-qHB6nkCsLHbR3six24uBQxcwFUPey_EXQcn4buFl7WbsKd0eebGugVeHLy08OLTBhW0A..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent解决的不是AI有多强,而是AI有多健忘</a>
+          <div class="meta">
+            <span>✍️ 塔亮高途</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9ppEgx6bmr3gOik_nQJMPg99rdsLPFolSpGT_i9nDD_drS8D04Kpu0vYZ4ocd1fOqZrUy6V8GxMXi1GCgeLI0gc1Lv4J7zokgFYF_PADaNcxhVu8VmzgnCPZbQNWqUoj5f7jPvXaE4OLD0lWpb5718tOVgCWQryr0XbQX6uZs0dde0WC6Sbi7DA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 飞书消息发不出去了:排查记录</a>
+          <div class="meta">
+            <span>✍️ 小工具代码</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9gXWikOff5WU5TuftLLZgOAjS0ldz9GHwJTrNn9_setEINsO9pcDjaKm43595x5k6TN6k50n55dOIy0mXxCUJUFcL4V-SrrCcddN2AE0grWWnYTb7hyTJZJQVKHVgEcvfcQRCC0tUeHVyjtJhmS3vJhse8tsrQzdA0vCYUL2CZJsHpHkoPMgL3A..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">Hermes Agent 5大副业方向</a>
+          <div class="meta">
+            <span>✍️ 旦旦人</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
+          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo4fxVhgjZojPc3o-cEmARslqXa8Fplpd9w_SmF1-xjgkuEGcRRH40OrHd362ItIQM1SCGljE1o-W1lnZp5ax7vf1JSdIkRRu7XCBac_PPC-tkLml_eeAmObIyS43BeMhB-gfNOGPVpO7VI_T_kBYIdUWvXKUKC2xP9EB7Y69czmuZ8FK3MueB16hlhaVFZWrBpwOuS1-A1kHzAjcIGepUqA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA6DC7026025E2F212773E88DC388512115BD4D6A2787AB" target="_blank" class="title">HermesAgent=本地运行AIAgent</a>
+          <div class="meta">
+            <span>✍️ BuzzAI</span><span>🕐 2026-06</span>
+            <span class="s">👁 0</span>
+            <span class="s">💬 0</span>
+            <span class="s">👍 0</span>
+          </div>
+        </div>
+        <div class="card-keymsg">微信公众号相关报道</div>
+        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
+      </div>
+    </div>
+    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
+      <div class="card-inner">
+        <div class="card-main">
+          <div class="tag tag-微信公众号">微信公众号</div>
           <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSo2Rao3OrJUF3c3o-cEmARslqXa8Fplpd92LxRDiQmM36cjb-BbXDah8P7NkCERPhWyzvzCu2mA19ksB-roMxIfyu1XBqm5yj4Kn9xsL5HWJNGLhKZzwlk7S1i1v0P5j_PNiySd2C12DWRuZO73d4aoo7IJZxrqJz6VK8FftF9oN044G0OptUAJ-o51esQIA4bCGHQ_QijmWYY-UZGbO56rA..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA354C6E9CD91E0EEE8BD264B99F9AFEF9D411C6A27870D" target="_blank" class="title">好消息:Hermes Agent桌面版支持简体中文了</a>
           <div class="meta">
             <span>✍️ 微调人生6</span><span>🕐 2026-06</span>
@@ -2663,38 +3299,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;backgr
         <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
       </div>
     </div>
-    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSoopowlA9RVV_c3o-cEmARslqXa8Fplpd9gXWikOff5WU5TuftLLZgOAjS0ldz9GHwJTrNn9_setEINsO9pcDjaKm43595x5k6TN6k50n55dOIy0mXxCUJUB3rptB1a8_-upzvJdtrPUtJdvSO38YxIjS5I3uX5VRKceciubs9XaGMdka4Q2YZdK_OremthgrN1jn33sIb2Ot535pjGOOjYg..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA35DEA496D30404F481C87EBC500464FA06A036A27870E" target="_blank" class="title">Hermes Agent 5大副业方向</a>
-          <div class="meta">
-            <span>✍️ 旦旦人</span><span>🕐 2026-06</span>
-            <span class="s">👁 0</span>
-            <span class="s">💬 0</span>
-            <span class="s">👍 0</span>
-          </div>
-        </div>
-        <div class="card-keymsg">微信公众号相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
-      </div>
-    </div>
-    <div class="card" data-date="2026-06" data-read="0" data-like="0" data-reply="0" data-score="2" data-cat="微信公众号">
-      <div class="card-inner">
-        <div class="card-main">
-          <div class="tag tag-微信公众号">微信公众号</div>
-          <a href="https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSy0Kj1jCPGSoopowlA9RVV_c3o-cEmARslqXa8Fplpd9w_SmF1-xjgkuEGcRRH40OrHd362ItIQM1SCGljE1o-W1lnZp5ax7vf1JSdIkRRu7XCBac_PPC-tkLml_eeAmOcxrmqujc6RqEB92lfQdCf5bybx1LPKkBqDSzjfDQEq6yTmRMJqX4_F8f5fPxI-N1GU63HLnC8LAFUDsEK5WDTACn9lOoZLP2Q..&amp;type=2&amp;query=Hermes Agent&amp;token=5FA35DEA496D30404F481C87EBC500464FA06A036A27870E" target="_blank" class="title">HermesAgent=本地运行AIAgent</a>
-          <div class="meta">
-            <span>✍️ BuzzAI</span><span>🕐 2026-06</span>
-            <span class="s">👁 0</span>
-            <span class="s">💬 0</span>
-            <span class="s">👍 0</span>
-          </div>
-        </div>
-        <div class="card-keymsg">微信公众号相关报道</div>
-        <div class="card-score">★★☆☆☆<br><span class="score-num">2.0</span></div>
-      </div>
-    </div>
 </div>
 
 <div class="ft">
@@ -2708,5 +3312,35 @@ function s(k){window._newsSort(k)}
 function to(){window._newsToggle()}
 function fc(c){window._newsFilter(c)}
 </script>
+<div class="history-section">
+<h3 class="history-title">&#128202; 爬取历史 <span class="history-sub">最近1次运行</span></h3>
+<div class="history-table-wrap">
+<table class="history-table">
+<thead><tr><th>时间</th><th>头条</th><th>微信</th><th>HN</th><th>GitHub</th><th>合计</th><th>耗时</th><th>状态</th></tr></thead>
+<tbody><tr><td>2026-06-09 11:58</td><td>36</td><td>20</td><td>20</td><td>10</td><td class="hist-num">86</td><td>131s</td><td class="hist-ok">&#9989;</td></tr>
+</tbody>
+</table></div></div>
 </body>
-</html>
+</html><table class="history-table">
+<thead><tr>
+    <th>时间</th><th>头条</th><th>微信</th><th>HN</th><th>GitHub</th><th>合计</th><th>耗时</th><th>状态</th>
+</tr></thead>
+<tbody>    <tr>
+        <td>2026-06-09 11:58</td>
+        <td>36</td>
+        <td>20</td>
+        <td>20</td>
+        <td>10</td>
+        <td class="hist-num">86</td>
+        <td>131s</td>
+        <td class="hist-ok">&#9989;</td>
+    </tr>
+</tbody>
+</table></div></div>
+    <div class="ft">
+    <p>数据来源：<a href="https://so.toutiao.com/search?keyword=Hermes%20Agent" target="_blank">今日头条</a> · <a href="https://weixin.sogou.com/weixin?type=2&query=Hermes+Agent" target="_blank">微信公众号</a> · <a href="https://news.ycombinator.com/" target="_blank">Hacker News</a> · <a href="https://github.com/NousResearch/hermes-agent/issues" target="_blank">GitHub Issues</a></p>
+    <p>由小马S（Hermes Agent）自动聚合 · 每小时更新 <span id="ftd"></span></p>
+    </div>
+    
+    </body>
+    </html>
